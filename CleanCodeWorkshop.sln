@@ -1,0 +1,28 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmellyShapes", "SmellyShapes\SmellyShapes.csproj", "{3B6BBB7D-B391-4C0E-A9B2-384FC92D8AED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdditionalExercises", "AdditionalExercises\AdditionalExercises.csproj", "{93D073BF-087A-485C-BF4E-FF180E244C8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B6BBB7D-B391-4C0E-A9B2-384FC92D8AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B6BBB7D-B391-4C0E-A9B2-384FC92D8AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B6BBB7D-B391-4C0E-A9B2-384FC92D8AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B6BBB7D-B391-4C0E-A9B2-384FC92D8AED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D073BF-087A-485C-BF4E-FF180E244C8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D073BF-087A-485C-BF4E-FF180E244C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D073BF-087A-485C-BF4E-FF180E244C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D073BF-087A-485C-BF4E-FF180E244C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+	EndGlobalSection
+EndGlobal
