@@ -60,7 +60,7 @@ public class ShapeGroup : ComplexShape
 
     private void AddToShapes(IShape shape)
     {
-        if (Size + 1 > Shapes.Length)
+        if (ShouldGrow())
         {
             var newShapes = new IShape[Shapes.Length + InitialArraySize];
             for (var i = 0; i < Size; i++)
@@ -72,5 +72,10 @@ public class ShapeGroup : ComplexShape
         }
 
         Shapes[Size++] = shape;
+
+        bool ShouldGrow()
+        {
+            return Size + 1 > Shapes.Length;
+        }
     }
 }
