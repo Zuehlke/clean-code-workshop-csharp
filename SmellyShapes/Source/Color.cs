@@ -3,6 +3,7 @@ namespace SmellyShapes.Source;
 public class Color
 {
     private const string Red = "Red";
+    private const string Blue = "Blue";
     private readonly string colorAsText;
 
     public Color(string colorAsText)
@@ -44,7 +45,7 @@ public class Color
             ColorAsRgbGreen = "0";
             ColorAsHex = "#FF0000";
         }
-        else if (colorAsText == "Blue")
+        else if (colorAsText == Blue)
         {
             // set to Blue
             ColorAsRgbRed = "0";
