@@ -4,6 +4,7 @@ public class Color
 {
     private const string Red = "Red";
     private const string Blue = "Blue";
+    private const string Green = "Green";
     private readonly string colorAsText;
 
     public Color(string colorAsText)
@@ -53,7 +54,7 @@ public class Color
             ColorAsRgbGreen = "0";
             ColorAsHex = "#00FF00";
         }
-        else if (colorAsText == "Green")
+        else if (colorAsText == Green)
         {
             // set to Green
             ColorAsRgbRed = "0";
