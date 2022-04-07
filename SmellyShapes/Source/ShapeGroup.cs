@@ -22,6 +22,11 @@ public class ShapeGroup : ComplexShape
     {
         if (ReadOnly || Contains(shape)) return;
 
+        AddToShapes(shape);
+    }
+
+    private void AddToShapes(IShape shape)
+    {
         var newSize = size + 1;
         if (newSize > shapes.Length)
         {
