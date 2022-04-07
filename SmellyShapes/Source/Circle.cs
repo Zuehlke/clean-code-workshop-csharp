@@ -42,7 +42,7 @@ public class Circle : SimpleShape
 
     public int CountContainingPoints(int[] xCords, int[] yCords)
     {
-        numberOfContainingPoints = 0;
+        var numberOfContainingPoints = 0;
         for (var i = 0; i < xCords.Length; ++i)
         {
             static int Square(int i1)
