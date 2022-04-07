@@ -21,7 +21,13 @@ public class Circle : SimpleShape
 
     public override bool Contains(int x, int y)
     {
+        static int Square(int i)
+        {
+            return i * i;
+        }
+
         var deltaX = x - X;
+
         var deltaY = y - Y;
         var result = Square(deltaX) + Square(deltaY) <= Square(Radius);
 
@@ -32,11 +38,6 @@ public class Circle : SimpleShape
         }
 
         return result;
-
-        static int Square(int i)
-        {
-            return i * i;
-        }
     }
 
     public int CountContainingPoints(int[] xCords, int[] yCords)
