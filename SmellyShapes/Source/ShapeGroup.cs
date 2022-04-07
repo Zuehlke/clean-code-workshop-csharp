@@ -62,13 +62,7 @@ public class ShapeGroup : ComplexShape
     {
         if (ShouldGrow())
         {
-            var newShapes = new IShape[Shapes.Length + InitialArraySize];
-            for (var i = 0; i < Size; i++)
-            {
-                newShapes[i] = Shapes[i];
-            }
-
-            Shapes = newShapes;
+            GrowShapes();
         }
 
         Shapes[Size++] = shape;
@@ -76,6 +70,17 @@ public class ShapeGroup : ComplexShape
         bool ShouldGrow()
         {
             return Size + 1 > Shapes.Length;
+        }
+
+        void GrowShapes()
+        {
+            var newShapes = new IShape[Shapes.Length + InitialArraySize];
+            for (var i = 0; i < Size; i++)
+            {
+                newShapes[i] = Shapes[i];
+            }
+
+            Shapes = newShapes;
         }
     }
 }
