@@ -23,10 +23,15 @@ public class Circle : SimpleShape
     {
         var deltaX = x - X;
         var deltaY = y - Y;
-        var result = deltaX * deltaX + deltaY * deltaY <= Radius * Radius;
+        var result = Square(deltaX) + deltaY * deltaY <= Radius * Radius;
         // Increase number of Points?
         if (result) numberOfContainingPoints++;
         return result;
+
+        int Square(int i)
+        {
+            return i * i;
+        }
     }
 
     public int CountContainingPoints(int[] xCords, int[] yCords)
