@@ -2,9 +2,11 @@ namespace SmellyShapes.Source;
 
 public class ShapeGroup : ComplexShape
 {
-    public IShape[] Shapes = new IShape[10];
+    public IShape[] Shapes = new IShape[InitialArraySize];
 
     public int Size;
+
+    private const int InitialArraySize = 10;
 
     public ShapeGroup()
     {
@@ -24,7 +26,7 @@ public class ShapeGroup : ComplexShape
             var newSize = Size + 1;
             if (newSize > Shapes.Length)
             {
-                var newShapes = new IShape[Shapes.Length + 10];
+                var newShapes = new IShape[Shapes.Length + InitialArraySize];
                 for (var i = 0; i < Size; i++)
                 {
                     newShapes[i] = Shapes[i];
