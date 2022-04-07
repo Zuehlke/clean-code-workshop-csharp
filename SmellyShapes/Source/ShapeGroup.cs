@@ -65,7 +65,7 @@ public class ShapeGroup : ComplexShape
             GrowShapes();
         }
 
-        AddToShapes();
+        AddToShapesLocal();
 
         bool ShouldGrow()
         {
@@ -83,7 +83,7 @@ public class ShapeGroup : ComplexShape
             Shapes = newShapes;
         }
 
-        void AddToShapes()
+        void AddToShapesLocal()
         {
             Shapes[Size++] = shape;
         }
