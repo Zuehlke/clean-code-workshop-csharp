@@ -2,6 +2,7 @@ namespace SmellyShapes.Source;
 
 public class Color
 {
+    private const string Red = "Red";
     private readonly string colorAsText;
     private string colorAsHex;
     private string colorAsRGB_Blue;
@@ -19,7 +20,7 @@ public class Color
     {
         errorMessage = "";
         // set to Red
-        if ("Red".Equals(colorAsText))
+        if (Red.Equals(colorAsText))
         {
             colorAsRGB_Red = "255";
             colorAsRGB_Blue = "0";
