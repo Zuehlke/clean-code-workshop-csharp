@@ -21,18 +21,20 @@ public class Circle : SimpleShape
 
     public override bool Contains(int x, int y)
     {
-        var deltaX = x - X;
-        var deltaY = y - Y;
-        var result = Square(deltaX) + Square(deltaY) <= Square(Radius);
-
-        // Increase number of Points?
-        if (result) numberOfContainingPoints++;
-        return result;
-
         int Square(int i)
         {
             return i * i;
         }
+
+        var deltaX = x - X;
+
+        var deltaY = y - Y;
+        var result = Square(deltaX) + Square(deltaY) <= Square(Radius);
+        // Increase number of Points?
+
+        if (result) numberOfContainingPoints++;
+
+        return result;
     }
 
     public int CountContainingPoints(int[] xCords, int[] yCords)
