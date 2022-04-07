@@ -48,7 +48,6 @@ public class Circle : SimpleShape
             // Increase number of Points?
 
             if (result) numberOfContainingPoints++;
-            var temp = result;
         }
 
         return numberOfContainingPoints;
