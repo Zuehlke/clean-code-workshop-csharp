@@ -23,7 +23,7 @@ public class Circle : SimpleShape
     {
         var deltaX = x - X;
         var deltaY = y - Y;
-        var result = Square(deltaX) + (deltaY * deltaY) <= Radius * Radius;
+        var result = Square(deltaX) + Square(deltaY) <= Square(Radius);
 
         // Increase number of Points?
         if (result)
