@@ -60,8 +60,7 @@ public class ShapeGroup : ComplexShape
 
     private void AddToShapes(IShape shape)
     {
-        var newSize = Size + 1;
-        if (newSize > Shapes.Length)
+        if (Size + 1 > Shapes.Length)
         {
             var newShapes = new IShape[Shapes.Length + InitialArraySize];
             for (var i = 0; i < Size; i++)
