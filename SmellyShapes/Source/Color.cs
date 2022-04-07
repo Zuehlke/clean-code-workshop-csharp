@@ -4,6 +4,7 @@ public class Color
 {
     private const string Red = "Red";
     private const string Blue = "Blue";
+    private const string Green = "Green";
     private readonly string colorAsText;
     private string colorAsHex;
     private string colorAsRGB_Blue;
@@ -36,7 +37,7 @@ public class Color
             colorAsRGB_Green = "0";
             colorAsHex = "#00FF00";
         }
-        else if ("Green".Equals(colorAsText))
+        else if (Green.Equals(colorAsText))
         {
             // set to Green
             colorAsRGB_Red = "0";
