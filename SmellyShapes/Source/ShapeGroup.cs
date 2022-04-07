@@ -20,19 +20,18 @@ public class ShapeGroup : ComplexShape
 
     public void Add(IShape shape)
     {
-        if (!ReadOnly)
-        {
-            var newSize = size + 1;
-            if (newSize > shapes.Length)
-            {
-                var newShapes = new IShape[shapes.Length + InitialArraySize];
-                for (var i = 0; i < size; i++) newShapes[i] = shapes[i];
-                shapes = newShapes;
-            }
+        if (ReadOnly) return;
 
-            if (Contains(shape)) return;
-            shapes[size++] = shape;
+        var newSize = size + 1;
+        if (newSize > shapes.Length)
+        {
+            var newShapes = new IShape[shapes.Length + InitialArraySize];
+            for (var i = 0; i < size; i++) newShapes[i] = shapes[i];
+            shapes = newShapes;
         }
+
+        if (Contains(shape)) return;
+        shapes[size++] = shape;
     }
 
     public bool Contains(IShape shape)
