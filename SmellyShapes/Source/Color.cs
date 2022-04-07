@@ -21,7 +21,6 @@ public class Color
     private void ConvertTextValueToRGBAndHex()
     {
         errorMessage = "";
-        // set to Red
         if (Red.Equals(colorAsText))
         {
             colorAsRGB_Red = "255";
@@ -31,7 +30,6 @@ public class Color
         }
         else if (Blue.Equals(colorAsText))
         {
-            // set to Blue
             colorAsRGB_Red = "0";
             colorAsRGB_Blue = "255";
             colorAsRGB_Green = "0";
@@ -39,7 +37,6 @@ public class Color
         }
         else if (Green.Equals(colorAsText))
         {
-            // set to Green
             colorAsRGB_Red = "0";
             colorAsRGB_Blue = "0";
             colorAsRGB_Green = "255";
