@@ -27,7 +27,7 @@ public class ShapeGroup : ComplexShape
 
     private void AddToShapes(IShape shape)
     {
-        if (size + 1 > shapes.Length)
+        if (ShouldGrow())
         {
             var newShapes = new IShape[shapes.Length + InitialArraySize];
             for (var i = 0; i < size; i++) newShapes[i] = shapes[i];
@@ -35,6 +35,11 @@ public class ShapeGroup : ComplexShape
         }
 
         shapes[size++] = shape;
+
+        bool ShouldGrow()
+        {
+            return size + 1 > shapes.Length;
+        }
     }
 
     public bool Contains(IShape shape)
