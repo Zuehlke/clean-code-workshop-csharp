@@ -29,7 +29,7 @@ public class ShapeGroup : ComplexShape
     {
         if (ShouldGrow()) GrowShapes();
 
-        AddToShapes();
+        AddToShapesLocal();
 
         bool ShouldGrow()
         {
@@ -43,7 +43,7 @@ public class ShapeGroup : ComplexShape
             shapes = newShapes;
         }
 
-        void AddToShapes()
+        void AddToShapesLocal()
         {
             shapes[size++] = shape;
         }
