@@ -11,9 +11,6 @@ public class Circle : SimpleShape
         Radius = radius;
     }
 
-    /// <summary>
-    ///     Gets or sets the shape color.
-    /// </summary>
     public Color Color { get; set; } = new("Green");
 
     public int X { get; }
