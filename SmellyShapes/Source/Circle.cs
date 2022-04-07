@@ -45,7 +45,23 @@ public class Circle : SimpleShape
         numberOfContainingPoints = 0;
         for (var i = 0; i < xCords.Length; ++i)
         {
-            Contains(xCords[i], yCords[i]);
+            static int Square(int i1)
+            {
+                return i1 * i1;
+            }
+
+            var deltaX = xCords[i] - X;
+
+            var deltaY = yCords[i] - Y;
+            var result = Square(deltaX) + Square(deltaY) <= Square(Radius);
+
+            // Increase number of Points?
+            if (result)
+            {
+                numberOfContainingPoints++;
+            }
+
+            var temp = result;
         }
 
         return numberOfContainingPoints;
