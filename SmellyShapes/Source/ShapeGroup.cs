@@ -21,7 +21,7 @@ public class ShapeGroup : ComplexShape
 
     public void Add(IShape shape)
     {
-        if (ReadOnly)
+        if (ReadOnly || Contains(shape))
         {
             return;
         }
@@ -36,11 +36,6 @@ public class ShapeGroup : ComplexShape
             }
 
             Shapes = newShapes;
-        }
-
-        if (Contains(shape))
-        {
-            return;
         }
 
         Shapes[Size++] = shape;
