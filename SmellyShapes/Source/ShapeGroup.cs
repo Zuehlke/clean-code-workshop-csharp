@@ -20,7 +20,7 @@ public class ShapeGroup : ComplexShape
 
     public void Add(IShape shape)
     {
-        if (ReadOnly) return;
+        if (ReadOnly || Contains(shape)) return;
 
         var newSize = size + 1;
         if (newSize > shapes.Length)
@@ -30,7 +30,6 @@ public class ShapeGroup : ComplexShape
             shapes = newShapes;
         }
 
-        if (Contains(shape)) return;
         shapes[size++] = shape;
     }
 
