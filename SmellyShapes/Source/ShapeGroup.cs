@@ -26,19 +26,7 @@ public class ShapeGroup : ComplexShape
             return;
         }
 
-        var newSize = Size + 1;
-        if (newSize > Shapes.Length)
-        {
-            var newShapes = new IShape[Shapes.Length + InitialArraySize];
-            for (var i = 0; i < Size; i++)
-            {
-                newShapes[i] = Shapes[i];
-            }
-
-            Shapes = newShapes;
-        }
-
-        Shapes[Size++] = shape;
+        AddToShapes(shape);
     }
 
     public bool Contains(IShape shape)
@@ -68,5 +56,22 @@ public class ShapeGroup : ComplexShape
         }
 
         return false;
+    }
+
+    private void AddToShapes(IShape shape)
+    {
+        var newSize = Size + 1;
+        if (newSize > Shapes.Length)
+        {
+            var newShapes = new IShape[Shapes.Length + InitialArraySize];
+            for (var i = 0; i < Size; i++)
+            {
+                newShapes[i] = Shapes[i];
+            }
+
+            Shapes = newShapes;
+        }
+
+        Shapes[Size++] = shape;
     }
 }
