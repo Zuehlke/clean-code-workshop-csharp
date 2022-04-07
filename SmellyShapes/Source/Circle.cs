@@ -21,7 +21,8 @@ public class Circle : SimpleShape
 
     public override bool Contains(int x, int y)
     {
-        var result = ((x - X) * (x - X)) + ((y - Y) * (y - Y)) <= Radius * Radius;
+        var deltaX = x - X;
+        var result = (deltaX * deltaX) + ((y - Y) * (y - Y)) <= Radius * Radius;
 
         // Increase number of Points?
         if (result)
