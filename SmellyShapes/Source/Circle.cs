@@ -51,8 +51,6 @@ public class Circle : SimpleShape
             {
                 numberOfContainingPoints++;
             }
-
-            var temp = result;
         }
 
         return numberOfContainingPoints;
