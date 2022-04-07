@@ -38,7 +38,6 @@ public class Color
     {
         ErrorMessage = string.Empty;
 
-        // set to Red
         if (colorAsText == Red)
         {
             ColorAsRgbRed = "255";
@@ -48,7 +47,6 @@ public class Color
         }
         else if (colorAsText == Blue)
         {
-            // set to Blue
             ColorAsRgbRed = "0";
             ColorAsRgbBlue = "255";
             ColorAsRgbGreen = "0";
@@ -56,7 +54,6 @@ public class Color
         }
         else if (colorAsText == Green)
         {
-            // set to Green
             ColorAsRgbRed = "0";
             ColorAsRgbBlue = "0";
             ColorAsRgbGreen = "255";
