@@ -27,18 +27,20 @@ public class ShapeGroup : ComplexShape
 
     private void AddToShapes(IShape shape)
     {
-        if (ShouldGrow())
-        {
-            var newShapes = new IShape[shapes.Length + InitialArraySize];
-            for (var i = 0; i < size; i++) newShapes[i] = shapes[i];
-            shapes = newShapes;
-        }
+        if (ShouldGrow()) GrowShapes();
 
         shapes[size++] = shape;
 
         bool ShouldGrow()
         {
             return size + 1 > shapes.Length;
+        }
+
+        void GrowShapes()
+        {
+            var newShapes = new IShape[shapes.Length + InitialArraySize];
+            for (var i = 0; i < size; i++) newShapes[i] = shapes[i];
+            shapes = newShapes;
         }
     }
 
