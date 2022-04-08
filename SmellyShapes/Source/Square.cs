@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace SmellyShapes.Source;
 
 public class Square : Rectangle
@@ -29,5 +31,21 @@ public class Square : Rectangle
     public bool Contains(int x1, int y1, int x2, int y2)
     {
         return Contains(x1, y1) && Contains(x2, y2);
+    }
+
+    public override string ToXml()
+    {
+        var builder = new StringBuilder();
+
+        if (this is Square square)
+        {
+            builder.Append("<square");
+            builder.Append(" x=\"" + square.X + "\"");
+            builder.Append(" y=\"" + square.Y + "\"");
+            builder.Append(" edgeLength=\"" + square.Width + "\"");
+            builder.Append(" />\n");
+        }
+
+        return builder.ToString();
     }
 }
