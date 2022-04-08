@@ -18,6 +18,11 @@ public class DrawingBoard : ShapeGroup
         drawingBoard.DrawOnScreen();
     }
 
+    public void Add(Shape shape)
+    {
+        shapeGroup.Add(shape);
+    }
+
     public void DrawOnScreen()
     {
         // ... removed for exercise
