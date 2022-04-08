@@ -9,7 +9,7 @@ public class SquareTest
     [Test]
     public void CalculateArea()
     {
-        var square = new Square(0, 0, 2);
+        var square = new Square(new Point(0, 0), 2);
         Assert.That(square.Calculate(), Is.EqualTo(4));
     }
 
@@ -23,7 +23,7 @@ public class SquareTest
     [Test]
     public void ToXml()
     {
-        var square = new Square(0, 1, 2);
+        var square = new Square(new Point(0, 1), 2);
         var xml = square.ToXml();
         Assert.That(xml, Is.EqualTo("<square x=\"0\" y=\"1\" edgeLength=\"2\" />\n"));
     }
@@ -31,7 +31,7 @@ public class SquareTest
     [Test]
     public void ContainsPoints()
     {
-        var square = new Square(0, 0, 1);
+        var square = new Square(new Point(0, 0), 1);
 
         Assert.That(square.ContainsPoint(new Point(0, 0)), Is.True);
         Assert.That(square.ContainsPoint(new Point(0, 1)), Is.True);
@@ -48,6 +48,6 @@ public class SquareTest
     [Test]
     public void GetHeight()
     {
-        Assert.That(() => new Square(0, 0, 0).Height, Throws.Exception.TypeOf<InvalidOperationException>());
+        Assert.That(() => new Square(new Point(0, 0), 0).Height, Throws.Exception.TypeOf<InvalidOperationException>());
     }
 }
