@@ -29,11 +29,6 @@ public class ShapeGroup : Shape
         size = value;
     }
 
-    public int GetSizeOld()
-    {
-        return Size;
-    }
-
     public static ShapeGroup CreateReadOnlyShapeGroup(Shape[] shapes)
     {
         return new ShapeGroup(shapes, true);
@@ -48,13 +43,13 @@ public class ShapeGroup : Shape
 
     private void AddToShapes(Shape shape)
     {
-        SetSizeOld(GetSizeOld() + 1);
+        SetSizeOld(Size + 1);
         shapes2.Add(shape);
     }
 
     public bool Contains(Shape shape)
     {
-        for (var i = 0; i < GetSizeOld(); i++)
+        for (var i = 0; i < Size; i++)
             if (shapes2[i].Equals(shape))
                 return true;
         return false;
@@ -79,7 +74,7 @@ public class ShapeGroup : Shape
         var builder = new StringBuilder();
 
         builder.Append("<shapegroup>\n");
-        for (var i = 0; i < GetSizeOld(); i++)
+        for (var i = 0; i < Size; i++)
             builder.Append(shapes2[i].ToXml());
         builder.Append("</shapegroup>\n");
 
