@@ -9,8 +9,6 @@ public class ShapeGroup : Shape
     private readonly List<Shape> shapes2 = new();
     protected bool ReadOnly;
 
-    public int size;
-
     public ShapeGroup()
     {
     }
