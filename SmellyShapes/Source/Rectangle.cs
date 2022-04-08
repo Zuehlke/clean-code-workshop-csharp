@@ -23,9 +23,9 @@ public class Rectangle : Shape
 
     public int Y { get; }
 
-    public override bool Contains(int x, int y)
+    public override bool Contains(Point point)
     {
-        return X <= x && x <= X + Width && Y <= y && y <= Y + height;
+        return X <= point.X && point.X <= X + Width && Y <= point.Y && point.Y <= Y + height;
     }
 
     public int Calculate()
