@@ -24,11 +24,11 @@ public class Color
 
     public string ErrorMessage { get; private set; }
 
-    public static string GetColorAsRgbGreen(Color color)
+    public string GetColorAsRgbGreen()
     {
-        return "RGB=" + color.ColorAsRgbRed + ","
-               + color.ColorAsRgbGreen + ","
-               + color.ColorAsRgbBlue;
+        return "RGB=" + ColorAsRgbRed + ","
+               + ColorAsRgbGreen + ","
+               + ColorAsRgbBlue;
     }
 
     public string GetColorFormatted(bool includeHexAndRgb)
