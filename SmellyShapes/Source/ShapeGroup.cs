@@ -31,7 +31,7 @@ public class ShapeGroup : Shape
 
     public int GetSizeOld()
     {
-        return size;
+        return Size;
     }
 
     public static ShapeGroup CreateReadOnlyShapeGroup(Shape[] shapes)
