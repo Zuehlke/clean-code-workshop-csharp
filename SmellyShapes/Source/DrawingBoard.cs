@@ -13,6 +13,11 @@ public class DrawingBoard : ShapeGroup
 
     public Color BackgroundColor { get; set; }
 
+    public void Add(Shape shape)
+    {
+        shapeGroup.Add(shape);
+    }
+
     public void DrawOnScreen()
     {
         var previousStart = NO_DATE;
