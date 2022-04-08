@@ -24,7 +24,7 @@ public class Color
 
     public string ErrorMessage { get; private set; }
 
-    public string GetColorAsRgbGreen()
+    public override string ToString()
     {
         return "RGB=" + ColorAsRgbRed + ","
                + ColorAsRgbGreen + ","
