@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace SmellyShapes.Source;
 
 public class Circle : Shape
@@ -54,5 +56,21 @@ public class Circle : Shape
                + " RGB=" + Color.GetColorAsRGBRed() + ","
                + Color.GetColorAsRGBGreen() + ","
                + Color.GetColorAsRGBBlue();
+    }
+
+    public override string ToXml()
+    {
+        var builder = new StringBuilder();
+
+        if (this is Circle circle)
+        {
+            builder.Append("<circle");
+            builder.Append(" x=\"" + circle.X + "\"");
+            builder.Append(" y=\"" + circle.Y + "\"");
+            builder.Append(" radius=\"" + circle.Radius + "\"");
+            builder.Append(" />\n");
+        }
+
+        return builder.ToString();
     }
 }

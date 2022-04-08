@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace SmellyShapes.Source;
 
 public class ShapeGroup : Shape
@@ -70,5 +72,21 @@ public class ShapeGroup : Shape
     public void SetReadOnly(bool readOnly)
     {
         ReadOnly = readOnly;
+    }
+
+    public override string ToXml()
+    {
+        var builder = new StringBuilder();
+
+        if (this is ShapeGroup)
+        {
+            var group = this;
+            builder.Append("<shapegroup>\n");
+            for (var i = 0; i < group.size; i++)
+                builder.Append(group.shapes[i].ToXml());
+            builder.Append("</shapegroup>\n");
+        }
+
+        return builder.ToString();
     }
 }
