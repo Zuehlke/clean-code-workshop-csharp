@@ -33,16 +33,16 @@ public class SquareTest
     {
         var square = new Square(0, 0, 1);
 
-        Assert.That(square.ContainsPoint(0, 0), Is.True);
-        Assert.That(square.ContainsPoint(0, 1), Is.True);
-        Assert.That(square.ContainsPoint(1, 1), Is.True);
-        Assert.That(square.ContainsPoint(1, 0), Is.True);
+        Assert.That(square.ContainsPoint(new Point(0, 0)), Is.True);
+        Assert.That(square.ContainsPoint(new Point(0, 1)), Is.True);
+        Assert.That(square.ContainsPoint(new Point(1, 1)), Is.True);
+        Assert.That(square.ContainsPoint(new Point(1, 0)), Is.True);
 
-        Assert.That(square.ContainsPoint(-1, -1), Is.False);
-        Assert.That(square.ContainsPoint(-1, 0), Is.False);
-        Assert.That(square.ContainsPoint(0, -1), Is.False);
-        Assert.That(square.ContainsPoint(1, 2), Is.False);
-        Assert.That(square.ContainsPoint(2, 1), Is.False);
+        Assert.That(square.ContainsPoint(new Point(-1, -1)), Is.False);
+        Assert.That(square.ContainsPoint(new Point(-1, 0)), Is.False);
+        Assert.That(square.ContainsPoint(new Point(0, -1)), Is.False);
+        Assert.That(square.ContainsPoint(new Point(1, 2)), Is.False);
+        Assert.That(square.ContainsPoint(new Point(2, 1)), Is.False);
     }
 
     [Test]

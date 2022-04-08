@@ -18,11 +18,6 @@ public class Square : Rectangle
     public override int Height =>
         throw new InvalidOperationException("Square does not have a height, only edgeLength");
 
-    public bool ContainsPoint(int x, int y)
-    {
-        return ContainsPoint(new Point(x, y));
-    }
-
     public bool ContainsPoint(Point point)
     {
         return X <= point.X && point.X <= X + Width && Y <= point.Y && point.Y <= Y + Width;
