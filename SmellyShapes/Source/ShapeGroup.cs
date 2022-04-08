@@ -19,7 +19,6 @@ public class ShapeGroup : Shape
 
     private ShapeGroup(Shape[] shapes, bool readOnly)
     {
-        this.shapes = shapes;
         shapes2 = shapes.ToList();
         size = shapes.Length;
         ReadOnly = readOnly;
@@ -52,12 +51,11 @@ public class ShapeGroup : Shape
         {
             var newShapes = new Shape[shapes2.Count + InitialArraySize];
             for (var i = 0; i < size; i++) newShapes[i] = shapes2[i];
-            shapes = newShapes;
         }
 
         void AddToShapesLocal()
         {
-            shapes[size++] = shape;
+            size++;
             shapes2.Add(shape);
         }
     }
