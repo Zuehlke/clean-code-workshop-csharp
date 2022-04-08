@@ -24,8 +24,18 @@ public class ShapeGroup : Shape
     public static ShapeGroup CreateShapeGroup(Shape[] shapes, bool readOnly)
     {
         if (readOnly)
-            return new ShapeGroup(shapes, readOnly);
-        return new ShapeGroup(shapes, readOnly);
+            return CreateReadOnlyShapeGroup(shapes);
+        return CreateWritableShapeGroup(shapes);
+    }
+
+    public static ShapeGroup CreateWritableShapeGroup(Shape[] shapes)
+    {
+        return new ShapeGroup(shapes, false);
+    }
+
+    public static ShapeGroup CreateReadOnlyShapeGroup(Shape[] shapes)
+    {
+        return new ShapeGroup(shapes, true);
     }
 
     public void Add(Shape shape)
