@@ -49,23 +49,23 @@ public class Circle : Shape
 
     public override string ToString()
     {
-        var centerString = CenterString();
-        var colorString = GetColorAsRgbGreen();
+        var centerString = CenterString(center);
+        var colorString = GetColorAsRgbGreen(Color);
 
         return "Circle: (" + centerString + ") radius= " + Radius
                + " " + colorString;
     }
 
-    private string GetColorAsRgbGreen()
+    private static string GetColorAsRgbGreen(Color color)
     {
-        return "RGB=" + Color.GetColorAsRGBRed() + ","
-               + Color.GetColorAsRGBGreen() + ","
-               + Color.GetColorAsRGBBlue();
+        return "RGB=" + color.GetColorAsRGBRed() + ","
+               + color.GetColorAsRGBGreen() + ","
+               + color.GetColorAsRGBBlue();
     }
 
-    private string CenterString()
+    private static string CenterString(Point point)
     {
-        return center.X + "," + center.Y;
+        return point.X + "," + point.Y;
     }
 
     public override string ToXml()
