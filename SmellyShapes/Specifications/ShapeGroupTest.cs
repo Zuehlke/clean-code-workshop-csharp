@@ -26,7 +26,7 @@ public class ShapeGroupTest
         var shapeGroup =
             ShapeGroup.CreateReadOnlyShapeGroup(shapes);
 
-        Assert.That(shapeGroup.size, Is.EqualTo(1));
+        Assert.That(shapeGroup.GetSizeOld(), Is.EqualTo(1));
     }
 
     [Test]
@@ -37,7 +37,7 @@ public class ShapeGroupTest
 
         shapeGroup.Add(new Circle(0, 0, 0));
 
-        Assert.That(shapeGroup.size, Is.EqualTo(0));
+        Assert.That(shapeGroup.GetSizeOld(), Is.EqualTo(0));
     }
 
     [Test]
@@ -48,7 +48,7 @@ public class ShapeGroupTest
 
         shapeGroup.Add(new Circle(0, 0, 0));
 
-        Assert.That(shapeGroup.size, Is.EqualTo(1));
+        Assert.That(shapeGroup.GetSizeOld(), Is.EqualTo(1));
     }
 
     [Test]
@@ -61,7 +61,7 @@ public class ShapeGroupTest
         shapeGroup.Add(circle);
         shapeGroup.Add(circle);
 
-        Assert.That(shapeGroup.size, Is.EqualTo(1));
+        Assert.That(shapeGroup.GetSizeOld(), Is.EqualTo(1));
     }
 
     [Test]
@@ -72,7 +72,7 @@ public class ShapeGroupTest
 
         for (var i = 0; i < 11; i++) shapeGroup.Add(new Circle(0, 0, 0));
 
-        Assert.That(shapeGroup.size, Is.EqualTo(11));
+        Assert.That(shapeGroup.GetSizeOld(), Is.EqualTo(11));
     }
 
     [Test]
