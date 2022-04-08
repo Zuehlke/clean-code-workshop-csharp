@@ -19,6 +19,8 @@ public class ShapeGroup : ComplexShape
         ReadOnly = readOnly;
     }
 
+    protected bool ReadOnly { get; set; }
+
     public void Add(IShape shape)
     {
         if (ReadOnly || Contains(shape))
@@ -56,6 +58,11 @@ public class ShapeGroup : ComplexShape
         }
 
         return false;
+    }
+
+    public void SetReadOnly(bool readOnly)
+    {
+        ReadOnly = readOnly;
     }
 
     private void AddToShapes(IShape shape)
