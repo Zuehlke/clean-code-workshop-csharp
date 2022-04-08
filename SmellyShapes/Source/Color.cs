@@ -84,10 +84,10 @@ public class Color
         return colorAsHex;
     }
 
-    public static string GetColorAsRgbGreen(Color color)
+    public string GetColorAsRgbGreen()
     {
-        return "RGB=" + color.GetColorAsRGBRed() + ","
-               + color.GetColorAsRGBGreen() + ","
-               + color.GetColorAsRGBBlue();
+        return "RGB=" + GetColorAsRGBRed() + ","
+               + GetColorAsRGBGreen() + ","
+               + GetColorAsRGBBlue();
     }
 }
