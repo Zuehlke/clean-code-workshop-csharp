@@ -3,6 +3,7 @@ namespace SmellyShapes.Source;
 public class ShapeGroup : ComplexShape
 {
     private static readonly int InitialArraySize = 10;
+    protected bool ReadOnly;
     public IShape[] shapes = new IShape[InitialArraySize];
 
     public int size;
@@ -64,5 +65,10 @@ public class ShapeGroup : ComplexShape
                 if (shape.Contains(x, y))
                     return true;
         return false;
+    }
+
+    public void SetReadOnly(bool readOnly)
+    {
+        ReadOnly = readOnly;
     }
 }
