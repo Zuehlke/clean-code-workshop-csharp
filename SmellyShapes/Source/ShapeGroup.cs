@@ -19,6 +19,8 @@ public class ShapeGroup : Shape
         ReadOnly = readOnly;
     }
 
+    public int Size2 => shapes2.Count;
+
     protected bool ReadOnly { get; set; }
 
     public static ShapeGroup CreateReadOnlyShapeGroup(Shape[] shapes)
