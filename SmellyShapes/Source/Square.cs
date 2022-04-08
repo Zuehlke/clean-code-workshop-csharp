@@ -20,12 +20,12 @@ public class Square : Rectangle
 
     public bool ContainsPoint(int x, int y)
     {
-        return X <= x && x <= X + Width && Y <= y && y <= Y + Width;
+        return ContainsPoint(new Point(x, y));
     }
 
     public bool ContainsPoint(Point point)
     {
-        return ContainsPoint(point.X, point.Y);
+        return X <= point.X && point.X <= X + Width && Y <= point.Y && point.Y <= Y + Width;
     }
 
     public override string ToString()
