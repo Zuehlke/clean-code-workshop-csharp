@@ -24,7 +24,7 @@ public class ShapeGroupTest
     {
         Shape[] shapes = {new Circle(0, 0, 0)};
         var shapeGroup =
-            true ? ShapeGroup.CreateReadOnlyShapeGroup(shapes) : ShapeGroup.CreateWritableShapeGroup(shapes);
+            ShapeGroup.CreateReadOnlyShapeGroup(shapes);
 
         Assert.That(shapeGroup.size, Is.EqualTo(1));
     }
