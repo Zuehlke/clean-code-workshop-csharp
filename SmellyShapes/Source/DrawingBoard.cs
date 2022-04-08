@@ -1,6 +1,6 @@
 namespace SmellyShapes.Source;
 
-public class DrawingBoard : ShapeGroup
+public class DrawingBoard
 {
     private readonly ShapeGroup shapeGroup = new();
 
