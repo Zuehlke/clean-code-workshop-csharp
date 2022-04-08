@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace SmellyShapes.Source;
 
 public class Rectangle : Shape
@@ -36,5 +38,30 @@ public class Rectangle : Shape
     {
         return
             $"Rectangle: ({X},{Y}) width={Width} height={height} color={C.ColorAsHex}";
+    }
+
+    public override string ToXml()
+    {
+        var builder = new StringBuilder();
+
+        if (this is Square square)
+        {
+            builder.Append("<square");
+            builder.Append(" x=\"" + square.X + "\"");
+            builder.Append(" y=\"" + square.Y + "\"");
+            builder.Append(" edgeLength=\"" + square.Width + "\"");
+            builder.Append(" />\n");
+        }
+        else if (this is Rectangle rectangle)
+        {
+            builder.Append("<rectangle");
+            builder.Append(" x=\"" + rectangle.X + "\"");
+            builder.Append(" y=\"" + rectangle.Y + "\"");
+            builder.Append(" width=\"" + rectangle.Width + "\"");
+            builder.Append(" height=\"" + rectangle.Height + "\"");
+            builder.Append(" />\n");
+        }
+
+        return builder.ToString();
     }
 }
