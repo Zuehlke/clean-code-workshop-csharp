@@ -23,7 +23,7 @@ public class ShapeGroupTest
     [Test]
     public void Constructor_WithShapeArray()
     {
-        Shape[] shapes = [new Circle(0, 0, 0)];
+        Shape[] shapes = [new Circle(new Point(0, 0), 0)];
         var shapeGroup = ShapeGroup.CreateReadOnlyShapeGroup(shapes);
 
         Assert.That(shapeGroup.Size, Is.EqualTo(1));
@@ -35,7 +35,7 @@ public class ShapeGroupTest
         var shapeGroup = new ShapeGroup();
         shapeGroup.SetReadOnly(true);
 
-        shapeGroup.Add(new Circle(0, 0, 0));
+        shapeGroup.Add(new Circle(new Point(0, 0), 0));
 
         Assert.That(shapeGroup.Size, Is.EqualTo(0));
     }
@@ -46,7 +46,7 @@ public class ShapeGroupTest
         var shapeGroup = new ShapeGroup();
         shapeGroup.SetReadOnly(false);
 
-        shapeGroup.Add(new Circle(0, 0, 0));
+        shapeGroup.Add(new Circle(new Point(0, 0), 0));
 
         Assert.That(shapeGroup.Size, Is.EqualTo(1));
     }
@@ -57,7 +57,7 @@ public class ShapeGroupTest
         var shapeGroup = new ShapeGroup();
         shapeGroup.SetReadOnly(false);
 
-        var circle = new Circle(0, 0, 0);
+        var circle = new Circle(new Point(0, 0), 0);
         shapeGroup.Add(circle);
         shapeGroup.Add(circle);
 
@@ -72,7 +72,7 @@ public class ShapeGroupTest
 
         for (var i = 0; i < 11; i++)
         {
-            shapeGroup.Add(new Circle(0, 0, 0));
+            shapeGroup.Add(new Circle(new Point(0, 0), 0));
         }
 
         Assert.That(shapeGroup.Size, Is.EqualTo(11));
@@ -90,7 +90,7 @@ public class ShapeGroupTest
     public void Contains_PointInGroup()
     {
         var shapeGroup = new ShapeGroup();
-        shapeGroup.Add(new Circle(0, 0, 0));
+        shapeGroup.Add(new Circle(new Point(0, 0), 0));
 
         Assert.That(shapeGroup.Contains(0, 0), Is.True);
     }
@@ -107,7 +107,7 @@ public class ShapeGroupTest
     public void Contains_ShapeInGroup()
     {
         var shapeGroup = new ShapeGroup();
-        var c = new Circle(0, 0, 0);
+        var c = new Circle(new Point(0, 0), 0);
         shapeGroup.Add(c);
 
         Assert.That(shapeGroup.Contains(c), Is.True);

@@ -9,7 +9,7 @@ public class CircleTest
     [SetUp]
     public void SetUp()
     {
-        circle = new Circle(0, 0, 1)
+        circle = new Circle(new Point(0, 0), 1)
         {
             Color = new Color("Red"),
         };

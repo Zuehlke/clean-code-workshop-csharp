@@ -4,10 +4,10 @@ namespace SmellyShapes.Source;
 
 public class Circle : Shape
 {
-    public Circle(int x, int y, int radius)
+    public Circle(Point point, int radius)
     {
-        X = x;
-        Y = y;
+        X = point.X;
+        Y = point.Y;
         Radius = radius;
     }
 
