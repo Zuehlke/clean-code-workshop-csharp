@@ -6,7 +6,6 @@ namespace SmellyShapes.Source;
 
 public class ShapeGroup : Shape
 {
-    private static readonly int InitialArraySize = 10;
     private readonly List<Shape> shapes2 = new();
     protected bool ReadOnly;
 
@@ -37,26 +36,8 @@ public class ShapeGroup : Shape
 
     private void AddToShapes(Shape shape)
     {
-        if (ShouldGrow()) GrowShapes();
-
-        AddToShapesLocal();
-
-        bool ShouldGrow()
-        {
-            return size + 1 > shapes2.Count;
-        }
-
-        void GrowShapes()
-        {
-            var newShapes = new Shape[shapes2.Count + InitialArraySize];
-            for (var i = 0; i < size; i++) newShapes[i] = shapes2[i];
-        }
-
-        void AddToShapesLocal()
-        {
-            size++;
-            shapes2.Add(shape);
-        }
+        size++;
+        shapes2.Add(shape);
     }
 
     public bool Contains(Shape shape)
