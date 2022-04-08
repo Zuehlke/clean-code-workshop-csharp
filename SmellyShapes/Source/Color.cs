@@ -24,6 +24,13 @@ public class Color
 
     public string ErrorMessage { get; private set; }
 
+    public static string GetColorAsRgbGreen(Color color)
+    {
+        return "RGB=" + color.ColorAsRgbRed + ","
+               + color.ColorAsRgbGreen + ","
+               + color.ColorAsRgbBlue;
+    }
+
     public string GetColorFormatted(bool includeHexAndRgb)
     {
         return includeHexAndRgb ? GetColorFormatted() : ColorAsText;
