@@ -6,8 +6,6 @@ public class ShapeGroup : Shape
 {
     public int Size;
 
-    private const int InitialArraySize = 10;
-
     private readonly List<Shape> shapes2 = [];
 
     public ShapeGroup()
@@ -89,31 +87,7 @@ public class ShapeGroup : Shape
 
     private void AddToShapes(Shape shape)
     {
-        if (ShouldGrow())
-        {
-            GrowShapes();
-        }
-
-        AddToShapesLocal();
-
-        bool ShouldGrow()
-        {
-            return Size + 1 > shapes2.Count;
-        }
-
-        void GrowShapes()
-        {
-            var newShapes = new Shape[shapes2.Count + InitialArraySize];
-            for (var i = 0; i < Size; i++)
-            {
-                newShapes[i] = shapes2[i];
-            }
-        }
-
-        void AddToShapesLocal()
-        {
-            Size++;
-            shapes2.Add(shape);
-        }
+        Size++;
+        shapes2.Add(shape);
     }
 }
