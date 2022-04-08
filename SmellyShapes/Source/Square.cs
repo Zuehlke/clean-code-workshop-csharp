@@ -38,15 +38,11 @@ public class Square : Rectangle
     {
         var builder = new StringBuilder();
 
-        if (this is Square)
-        {
-            var square = this;
-            builder.Append("<square");
-            builder.Append(" x=\"" + square.X + "\"");
-            builder.Append(" y=\"" + square.Y + "\"");
-            builder.Append(" edgeLength=\"" + square.Width + "\"");
-            builder.Append(" />\n");
-        }
+        builder.Append("<square");
+        builder.Append(" x=\"" + X + "\"");
+        builder.Append(" y=\"" + Y + "\"");
+        builder.Append(" edgeLength=\"" + Width + "\"");
+        builder.Append(" />\n");
 
         return builder.ToString();
     }

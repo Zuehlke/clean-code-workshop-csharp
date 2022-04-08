@@ -43,25 +43,12 @@ public class Rectangle : Shape
     {
         var builder = new StringBuilder();
 
-        if (this is Square)
-        {
-            var square = (Square) this;
-            builder.Append("<square");
-            builder.Append(" x=\"" + square.X + "\"");
-            builder.Append(" y=\"" + square.Y + "\"");
-            builder.Append(" edgeLength=\"" + square.Width + "\"");
-            builder.Append(" />\n");
-        }
-        else if (this is Rectangle)
-        {
-            var rectangle = this;
-            builder.Append("<rectangle");
-            builder.Append(" x=\"" + rectangle.X + "\"");
-            builder.Append(" y=\"" + rectangle.Y + "\"");
-            builder.Append(" width=\"" + rectangle.Width + "\"");
-            builder.Append(" height=\"" + rectangle.Height + "\"");
-            builder.Append(" />\n");
-        }
+        builder.Append("<rectangle");
+        builder.Append(" x=\"" + X + "\"");
+        builder.Append(" y=\"" + Y + "\"");
+        builder.Append(" width=\"" + Width + "\"");
+        builder.Append(" height=\"" + Height + "\"");
+        builder.Append(" />\n");
 
         return builder.ToString();
     }

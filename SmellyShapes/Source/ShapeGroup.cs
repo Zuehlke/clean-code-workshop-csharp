@@ -78,10 +78,9 @@ public class ShapeGroup : Shape
     {
         var builder = new StringBuilder();
 
-        var group = this;
         builder.Append("<shapegroup>\n");
-        for (var i = 0; i < group.size; i++)
-            builder.Append(group.shapes[i].ToXml());
+        for (var i = 0; i < size; i++)
+            builder.Append(shapes[i].ToXml());
         builder.Append("</shapegroup>\n");
 
         return builder.ToString();
