@@ -70,8 +70,7 @@ public class Color
 
     public string GetColorFormatted(bool includeHexAndRGB)
     {
-        if (includeHexAndRGB) return GetColorFormatted();
-        return GetColorAsText();
+        return includeHexAndRGB ? GetColorFormatted() : GetColorAsText();
     }
 
     private string GetColorFormatted()
