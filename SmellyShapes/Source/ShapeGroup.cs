@@ -19,6 +19,7 @@ public class ShapeGroup : Shape
     private ShapeGroup(Shape[] shapes, bool readOnly)
     {
         Shapes = shapes;
+        shapes2 = [.. shapes];
         Size = shapes.Length;
         ReadOnly = readOnly;
     }
@@ -117,6 +118,7 @@ public class ShapeGroup : Shape
         void AddToShapesLocal()
         {
             Shapes[Size++] = shape;
+            shapes2.Add(shape);
         }
     }
 }
