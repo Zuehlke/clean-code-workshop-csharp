@@ -27,8 +27,7 @@ public class Color
     {
         if (includeHexAndRgb)
         {
-            return colorAsText + " " + ColorAsHex + " " + ColorAsRgbRed + ":" + ColorAsRgbGreen + ":" +
-                   ColorAsRgbBlue;
+            return GetColorFormatted();
         }
 
         return GetColorAsText();
@@ -63,6 +62,12 @@ public class Color
         {
             ErrorMessage = "Color not recognized";
         }
+    }
+
+    private string GetColorFormatted()
+    {
+        return colorAsText + " " + ColorAsHex + " " + ColorAsRgbRed + ":" + ColorAsRgbGreen + ":" +
+               ColorAsRgbBlue;
     }
 
     private string GetColorAsText()
