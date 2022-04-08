@@ -10,4 +10,9 @@ public class Point
 
     public int X { get; }
     public int Y { get; }
+
+    public static string CenterString(Point point)
+    {
+        return point.X + "," + point.Y;
+    }
 }

@@ -83,4 +83,11 @@ public class Color
     {
         return colorAsHex;
     }
+
+    public static string GetColorAsRgbGreen(Color color)
+    {
+        return "RGB=" + color.GetColorAsRGBRed() + ","
+               + color.GetColorAsRGBGreen() + ","
+               + color.GetColorAsRGBBlue();
+    }
 }
