@@ -10,6 +10,8 @@ public class ShapeGroup : Shape
 
     private const int InitialArraySize = 10;
 
+    private readonly List<Shape> shapes2 = [];
+
     public ShapeGroup()
     {
     }
