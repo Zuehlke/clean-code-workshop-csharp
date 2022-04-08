@@ -10,7 +10,7 @@ public class ShapeGroupTest
     public void ToXml()
     {
         var shapeGroup = new ShapeGroup();
-        shapeGroup.Add(new Rectangle(0, 0, 2, 1));
+        shapeGroup.Add(new Rectangle(new Point(0, 0), 2, 1));
 
         var xml = shapeGroup.ToXml();
 
