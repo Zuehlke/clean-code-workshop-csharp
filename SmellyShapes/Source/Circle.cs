@@ -49,10 +49,13 @@ public class Circle : Shape
 
     public override string ToString()
     {
-        return "Circle: (" + center.X + "," + center.Y + ") radius= " + Radius
-               + " RGB=" + Color.GetColorAsRGBRed() + ","
-               + Color.GetColorAsRGBGreen() + ","
-               + Color.GetColorAsRGBBlue();
+        var centerString = center.X + "," + center.Y;
+        var colorStirng = "RGB=" + Color.GetColorAsRGBRed() + ","
+                          + Color.GetColorAsRGBGreen() + ","
+                          + Color.GetColorAsRGBBlue();
+
+        return "Circle: (" + centerString + ") radius= " + Radius
+               + " " + colorStirng;
     }
 
     public override string ToXml()
