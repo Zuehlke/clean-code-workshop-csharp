@@ -1,6 +1,6 @@
 namespace SmellyShapes.Source;
 
-public class ShapeGroup : ComplexShape
+public class ShapeGroup : AbstractShape
 {
     public IShape[] Shapes = new IShape[InitialArraySize];
 
