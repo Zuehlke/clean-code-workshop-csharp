@@ -4,7 +4,7 @@ namespace SmellyShapes.Source;
 
 public class ShapeGroup : Shape
 {
-    private readonly List<Shape> shapes2 = [];
+    private readonly List<Shape> shapes = [];
 
     public ShapeGroup()
     {
@@ -12,11 +12,11 @@ public class ShapeGroup : Shape
 
     private ShapeGroup(Shape[] shapes, bool readOnly)
     {
-        shapes2 = [.. shapes];
+        this.shapes = [.. shapes];
         ReadOnly = readOnly;
     }
 
-    public int Size2 => shapes2.Count;
+    public int Size => shapes.Count;
 
     protected bool ReadOnly { get; set; }
 
@@ -37,9 +37,9 @@ public class ShapeGroup : Shape
 
     public bool Contains(Shape shape)
     {
-        for (var i = 0; i < Size2; i++)
+        for (var i = 0; i < Size; i++)
         {
-            if (shapes2[i].Equals(shape))
+            if (shapes[i].Equals(shape))
             {
                 return true;
             }
@@ -50,7 +50,7 @@ public class ShapeGroup : Shape
 
     public override bool Contains(int x, int y)
     {
-        foreach (var shape in shapes2)
+        foreach (var shape in shapes)
         {
             if (shape != null)
             {
@@ -74,9 +74,9 @@ public class ShapeGroup : Shape
         var builder = new StringBuilder();
 
         builder.Append("<shapegroup>\n");
-        for (var i = 0; i < Size2; i++)
+        for (var i = 0; i < Size; i++)
         {
-            builder.Append(shapes2[i].ToXml());
+            builder.Append(shapes[i].ToXml());
         }
 
         builder.Append("</shapegroup>\n");
@@ -86,6 +86,6 @@ public class ShapeGroup : Shape
 
     private void AddToShapes(Shape shape)
     {
-        shapes2.Add(shape);
+        shapes.Add(shape);
     }
 }
