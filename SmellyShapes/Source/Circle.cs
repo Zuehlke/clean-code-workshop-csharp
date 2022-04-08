@@ -47,8 +47,8 @@ public class Circle : Shape
 
     public override string ToString()
     {
-        var centerString = CenterString();
-        var colorString = GetColorAsRgbGreen();
+        var centerString = CenterString(center);
+        var colorString = GetColorAsRgbGreen(Color);
 
         return "Circle: (" + centerString + ") radius= " + Radius
                + " " + colorString;
@@ -72,15 +72,15 @@ public class Circle : Shape
         return i * i;
     }
 
-    private string GetColorAsRgbGreen()
+    private static string GetColorAsRgbGreen(Color color)
     {
-        return "RGB=" + Color.ColorAsRgbRed + ","
-               + Color.ColorAsRgbGreen + ","
-               + Color.ColorAsRgbBlue;
+        return "RGB=" + color.ColorAsRgbRed + ","
+               + color.ColorAsRgbGreen + ","
+               + color.ColorAsRgbBlue;
     }
 
-    private string CenterString()
+    private static string CenterString(Point point)
     {
-        return center.X + "," + center.Y;
+        return point.X + "," + point.Y;
     }
 }
