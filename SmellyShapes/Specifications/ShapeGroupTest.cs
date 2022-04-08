@@ -23,7 +23,9 @@ public class ShapeGroupTest
     [Test]
     public void Constructor_WithShapeArray()
     {
-        var shapeGroup = ShapeGroup.CreateShapeGroup([new Circle(0, 0, 0)], true);
+        Shape[] shapes = [new Circle(0, 0, 0)];
+        var shapeGroup =
+            true ? ShapeGroup.CreateReadOnlyShapeGroup(shapes) : ShapeGroup.CreateWritableShapeGroup(shapes);
 
         Assert.That(shapeGroup.Size, Is.EqualTo(1));
     }
