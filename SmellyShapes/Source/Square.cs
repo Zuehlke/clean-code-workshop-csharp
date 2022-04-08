@@ -9,8 +9,8 @@ public class Square : Rectangle
     {
     }
 
-    public Square(int x, int y, int edgeLength, Color color)
-        : base(x, y, edgeLength, edgeLength)
+    public Square(Point point, int edgeLength, Color color)
+        : base(point.X, point.Y, edgeLength, edgeLength)
     {
         C = color;
     }
