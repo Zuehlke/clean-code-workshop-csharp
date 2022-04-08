@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text;
 
 namespace SmellyShapes.Source;
@@ -5,6 +6,7 @@ namespace SmellyShapes.Source;
 public class ShapeGroup : Shape
 {
     private static readonly int InitialArraySize = 10;
+    private readonly List<Shape> shapes2 = new();
     protected bool ReadOnly;
     public Shape[] shapes = new Shape[InitialArraySize];
 
