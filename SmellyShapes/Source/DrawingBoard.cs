@@ -2,6 +2,8 @@ namespace SmellyShapes.Source;
 
 public class DrawingBoard : ShapeGroup
 {
+    private readonly ShapeGroup shapeGroup = new();
+
     public Color BackgroundColor { get; set; }
 
     public static void Main()
