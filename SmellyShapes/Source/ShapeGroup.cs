@@ -15,7 +15,6 @@ public class ShapeGroup : Shape
     private ShapeGroup(Shape[] shapes, bool readOnly)
     {
         shapes2 = [.. shapes];
-        SetSizeOld(shapes.Length);
         ReadOnly = readOnly;
     }
 
@@ -26,11 +25,6 @@ public class ShapeGroup : Shape
     public static ShapeGroup CreateReadOnlyShapeGroup(Shape[] shapes)
     {
         return new ShapeGroup(shapes, true);
-    }
-
-    public void SetSizeOld(int value)
-    {
-        Size = value;
     }
 
     public void Add(Shape shape)
@@ -94,7 +88,6 @@ public class ShapeGroup : Shape
 
     private void AddToShapes(Shape shape)
     {
-        SetSizeOld(Size2 + 1);
         shapes2.Add(shape);
     }
 }
