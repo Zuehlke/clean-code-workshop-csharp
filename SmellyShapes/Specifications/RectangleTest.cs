@@ -9,7 +9,7 @@ public class RectangleTest
     [SetUp]
     public void SetUp()
     {
-        rectangle = new Rectangle(0, 0, 2, 1);
+        rectangle = new Rectangle(new Point(0, 0), 2, 1);
     }
 
     private Rectangle rectangle;

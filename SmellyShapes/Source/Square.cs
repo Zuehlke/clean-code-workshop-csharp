@@ -5,12 +5,12 @@ namespace SmellyShapes.Source;
 public class Square : Rectangle
 {
     public Square(Point point, int edgeLength)
-        : base(point.X, point.Y, edgeLength, edgeLength)
+        : base(new Point(point.X, point.Y), edgeLength, edgeLength)
     {
     }
 
     public Square(Point point, int edgeLength, Color color)
-        : base(point.X, point.Y, edgeLength, edgeLength)
+        : base(new Point(point.X, point.Y), edgeLength, edgeLength)
     {
         C = color;
     }

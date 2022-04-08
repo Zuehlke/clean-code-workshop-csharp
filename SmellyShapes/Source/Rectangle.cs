@@ -6,10 +6,10 @@ public class Rectangle : Shape
 {
     private readonly int height;
 
-    public Rectangle(int x, int y, int width, int height)
+    public Rectangle(Point point, int width, int height)
     {
-        X = x;
-        Y = y;
+        X = point.X;
+        Y = point.Y;
         Width = width;
         this.height = height;
     }
