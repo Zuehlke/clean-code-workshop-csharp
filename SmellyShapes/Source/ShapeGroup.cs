@@ -1,6 +1,6 @@
 namespace SmellyShapes.Source;
 
-public class ShapeGroup : ComplexShape
+public class ShapeGroup : AbstractShape
 {
     private static readonly int InitialArraySize = 10;
     protected bool ReadOnly;
