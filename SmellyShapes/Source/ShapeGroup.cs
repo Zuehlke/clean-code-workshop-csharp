@@ -22,6 +22,8 @@ public class ShapeGroup : Shape
         ReadOnly = readOnly;
     }
 
+    public int Size => shapes2.Count;
+
     public static ShapeGroup CreateReadOnlyShapeGroup(Shape[] shapes)
     {
         return new ShapeGroup(shapes, true);
