@@ -45,7 +45,7 @@ public class ShapeGroup : Shape
     {
         for (var i = 0; i < Size; i++)
         {
-            if (Shapes[i].Equals(shape))
+            if (shapes2[i].Equals(shape))
             {
                 return true;
             }
@@ -56,7 +56,7 @@ public class ShapeGroup : Shape
 
     public override bool Contains(int x, int y)
     {
-        foreach (var shape in Shapes)
+        foreach (var shape in shapes2)
         {
             if (shape != null)
             {
@@ -82,7 +82,7 @@ public class ShapeGroup : Shape
         builder.Append("<shapegroup>\n");
         for (var i = 0; i < Size; i++)
         {
-            builder.Append(Shapes[i].ToXml());
+            builder.Append(shapes2[i].ToXml());
         }
 
         builder.Append("</shapegroup>\n");
@@ -101,15 +101,15 @@ public class ShapeGroup : Shape
 
         bool ShouldGrow()
         {
-            return Size + 1 > Shapes.Length;
+            return Size + 1 > shapes2.Count;
         }
 
         void GrowShapes()
         {
-            var newShapes = new Shape[Shapes.Length + InitialArraySize];
+            var newShapes = new Shape[shapes2.Count + InitialArraySize];
             for (var i = 0; i < Size; i++)
             {
-                newShapes[i] = Shapes[i];
+                newShapes[i] = shapes2[i];
             }
 
             Shapes = newShapes;
