@@ -21,11 +21,6 @@ public class ShapeGroup : Shape
         ReadOnly = readOnly;
     }
 
-    public static ShapeGroup CreateShapeGroup(Shape[] shapes, bool readOnly)
-    {
-        return readOnly ? CreateReadOnlyShapeGroup(shapes) : CreateWritableShapeGroup(shapes);
-    }
-
     public static ShapeGroup CreateWritableShapeGroup(Shape[] shapes)
     {
         return new ShapeGroup(shapes, false);
