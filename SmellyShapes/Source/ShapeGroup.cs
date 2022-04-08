@@ -27,10 +27,20 @@ public class ShapeGroup : Shape
     {
         if (readOnly)
         {
-            return new ShapeGroup(shapes, readOnly);
+            return CreateReadOnlyShapeGroup(shapes);
         }
 
-        return new ShapeGroup(shapes, readOnly);
+        return CreateWritableShapeGroup(shapes);
+    }
+
+    public static ShapeGroup CreateWritableShapeGroup(Shape[] shapes)
+    {
+        return new ShapeGroup(shapes, false);
+    }
+
+    public static ShapeGroup CreateReadOnlyShapeGroup(Shape[] shapes)
+    {
+        return new ShapeGroup(shapes, true);
     }
 
     public void Add(Shape shape)
