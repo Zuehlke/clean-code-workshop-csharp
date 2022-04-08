@@ -9,6 +9,8 @@ public class DrawingBoard : ShapeGroup
     /// </summary>
     public static readonly DateTime NO_DATE = DateTime.MaxValue;
 
+    private readonly ShapeGroup shapeGroup = new();
+
     public Color BackgroundColor { get; set; }
 
     public void DrawOnScreen()
