@@ -2,7 +2,7 @@ using System.Text;
 
 namespace SmellyShapes.Source;
 
-public abstract class AbstractShape : IShape
+public abstract class AbstractShape
 {
     public abstract bool Contains(int x, int y);
 

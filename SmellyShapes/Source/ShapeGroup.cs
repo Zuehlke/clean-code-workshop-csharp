@@ -2,7 +2,7 @@ namespace SmellyShapes.Source;
 
 public class ShapeGroup : AbstractShape
 {
-    public IShape[] Shapes = new IShape[InitialArraySize];
+    public AbstractShape[] Shapes = new AbstractShape[InitialArraySize];
 
     public int Size;
 
@@ -12,7 +12,7 @@ public class ShapeGroup : AbstractShape
     {
     }
 
-    public ShapeGroup(IShape[] shapes, bool readOnly)
+    public ShapeGroup(AbstractShape[] shapes, bool readOnly)
     {
         Shapes = shapes;
         Size = shapes.Length;
@@ -21,7 +21,7 @@ public class ShapeGroup : AbstractShape
 
     protected bool ReadOnly { get; set; }
 
-    public void Add(IShape shape)
+    public void Add(AbstractShape shape)
     {
         if (ReadOnly || Contains(shape))
         {
@@ -31,7 +31,7 @@ public class ShapeGroup : AbstractShape
         AddToShapes(shape);
     }
 
-    public bool Contains(IShape shape)
+    public bool Contains(AbstractShape shape)
     {
         for (var i = 0; i < Size; i++)
         {
@@ -65,7 +65,7 @@ public class ShapeGroup : AbstractShape
         ReadOnly = readOnly;
     }
 
-    private void AddToShapes(IShape shape)
+    private void AddToShapes(AbstractShape shape)
     {
         if (ShouldGrow())
         {
@@ -81,7 +81,7 @@ public class ShapeGroup : AbstractShape
 
         void GrowShapes()
         {
-            var newShapes = new IShape[Shapes.Length + InitialArraySize];
+            var newShapes = new AbstractShape[Shapes.Length + InitialArraySize];
             for (var i = 0; i < Size; i++)
             {
                 newShapes[i] = Shapes[i];
