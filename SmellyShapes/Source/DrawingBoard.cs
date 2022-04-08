@@ -13,7 +13,7 @@ public class DrawingBoard
             BackgroundColor = new Color("Green"),
         };
 
-        drawingBoard.Add(new Square(-10, -10, 20));
+        drawingBoard.Add(new Square(new Point(-10, -10), 20));
         drawingBoard.Load("testFile");
         drawingBoard.DrawOnScreen();
     }

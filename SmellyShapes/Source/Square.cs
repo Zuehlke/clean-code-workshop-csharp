@@ -4,8 +4,8 @@ namespace SmellyShapes.Source;
 
 public class Square : Rectangle
 {
-    public Square(int x, int y, int edgeLength)
-        : base(x, y, edgeLength, edgeLength)
+    public Square(Point point, int edgeLength)
+        : base(point.X, point.Y, edgeLength, edgeLength)
     {
     }
 
