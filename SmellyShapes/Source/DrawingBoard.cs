@@ -2,7 +2,7 @@ using System;
 
 namespace SmellyShapes.Source;
 
-public class DrawingBoard : ShapeGroup
+public class DrawingBoard
 {
     /// <summary>
     ///     Use NO_DATE to indicate that no date is set (the equivalent of 'null Date' in Java)
