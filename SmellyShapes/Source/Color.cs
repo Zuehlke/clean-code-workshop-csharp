@@ -31,7 +31,7 @@ public class Color
                    ColorAsRgbBlue;
         }
 
-        return colorAsText;
+        return GetColorAsText();
     }
 
     private void ConvertTextValueToRgbAndHex()
@@ -63,5 +63,10 @@ public class Color
         {
             ErrorMessage = "Color not recognized";
         }
+    }
+
+    private string GetColorAsText()
+    {
+        return colorAsText;
     }
 }
