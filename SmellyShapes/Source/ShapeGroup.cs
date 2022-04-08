@@ -14,11 +14,16 @@ public class ShapeGroup : Shape
     {
     }
 
-    public ShapeGroup(Shape[] shapes, bool readOnly)
+    private ShapeGroup(Shape[] shapes, bool readOnly)
     {
         this.shapes = shapes;
         size = shapes.Length;
         ReadOnly = readOnly;
+    }
+
+    public static ShapeGroup CreateShapeGroup(Shape[] shapes, bool readOnly)
+    {
+        return new ShapeGroup(shapes, readOnly);
     }
 
     public void Add(Shape shape)
