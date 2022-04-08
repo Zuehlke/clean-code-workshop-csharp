@@ -35,7 +35,7 @@ public class ShapeGroup : Shape
 
     public int GetSizeOld()
     {
-        return Size;
+        return Size2;
     }
 
     public void Add(Shape shape)
