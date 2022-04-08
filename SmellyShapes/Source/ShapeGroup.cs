@@ -23,11 +23,6 @@ public class ShapeGroup : Shape
 
     protected bool ReadOnly { get; set; }
 
-    public static ShapeGroup CreateWritableShapeGroup(Shape[] shapes)
-    {
-        return new ShapeGroup(shapes, false);
-    }
-
     public static ShapeGroup CreateReadOnlyShapeGroup(Shape[] shapes)
     {
         return new ShapeGroup(shapes, true);
