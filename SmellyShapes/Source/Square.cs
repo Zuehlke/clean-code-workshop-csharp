@@ -28,9 +28,9 @@ public class Square : Rectangle
         return $"Square: ({X}:{Y}) edgeLength={Width} color={C.ColorAsHex}";
     }
 
-    public bool Contains(Point point, int x2, int y2)
+    public bool Contains(Point a, Point b)
     {
-        return Contains(point.X, point.Y) && Contains(x2, y2);
+        return Contains(a.X, a.Y) && Contains(b.X, b.Y);
     }
 
     public override string ToXml()
