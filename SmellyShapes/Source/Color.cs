@@ -84,7 +84,7 @@ public class Color
         return colorAsHex;
     }
 
-    public string GetColorAsRgbGreen()
+    public override string ToString()
     {
         return "RGB=" + GetColorAsRGBRed() + ","
                + GetColorAsRGBGreen() + ","

@@ -11,7 +11,7 @@ public class Point
     public int X { get; }
     public int Y { get; }
 
-    public string CenterString()
+    public override string ToString()
     {
         return X + "," + Y;
     }
