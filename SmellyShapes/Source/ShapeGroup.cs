@@ -23,6 +23,8 @@ public class ShapeGroup : Shape
 
     public static ShapeGroup CreateShapeGroup(Shape[] shapes, bool readOnly)
     {
+        if (readOnly)
+            return new ShapeGroup(shapes, readOnly);
         return new ShapeGroup(shapes, readOnly);
     }
 
