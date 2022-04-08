@@ -68,11 +68,6 @@ public class Color
         return errorMessage;
     }
 
-    public string GetColorFormatted(bool includeHexAndRGB)
-    {
-        return includeHexAndRGB ? GetColorFormatted() : GetColorAsText();
-    }
-
     public string GetColorFormatted()
     {
         return colorAsText + " " + colorAsHex + " " + colorAsRGB_Red + ":" + colorAsRGB_Green + ":" +
