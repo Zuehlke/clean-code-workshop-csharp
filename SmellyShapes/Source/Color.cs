@@ -25,12 +25,7 @@ public class Color
 
     public string GetColorFormatted(bool includeHexAndRgb)
     {
-        if (includeHexAndRgb)
-        {
-            return GetColorFormatted();
-        }
-
-        return GetColorAsText();
+        return includeHexAndRgb ? GetColorFormatted() : GetColorAsText();
     }
 
     private void ConvertTextValueToRgbAndHex()
