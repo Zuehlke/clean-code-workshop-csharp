@@ -47,8 +47,8 @@ public class Circle : Shape
 
     public override string ToString()
     {
-        var centerString = center.CenterString();
-        var colorString = Color.GetColorAsRgbGreen();
+        var centerString = center.ToString();
+        var colorString = Color.ToString();
 
         return "Circle: (" + centerString + ") radius= " + Radius
                + " " + colorString;
