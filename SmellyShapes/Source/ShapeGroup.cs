@@ -15,7 +15,7 @@ public class ShapeGroup : Shape
     private ShapeGroup(Shape[] shapes, bool readOnly)
     {
         shapes2 = [.. shapes];
-        Size = shapes.Length;
+        SetSizeOld(shapes.Length);
         ReadOnly = readOnly;
     }
 
@@ -26,6 +26,16 @@ public class ShapeGroup : Shape
     public static ShapeGroup CreateReadOnlyShapeGroup(Shape[] shapes)
     {
         return new ShapeGroup(shapes, true);
+    }
+
+    public void SetSizeOld(int value)
+    {
+        Size = value;
+    }
+
+    public int GetSizeOld()
+    {
+        return Size;
     }
 
     public void Add(Shape shape)
@@ -40,7 +50,7 @@ public class ShapeGroup : Shape
 
     public bool Contains(Shape shape)
     {
-        for (var i = 0; i < Size; i++)
+        for (var i = 0; i < GetSizeOld(); i++)
         {
             if (shapes2[i].Equals(shape))
             {
@@ -77,7 +87,7 @@ public class ShapeGroup : Shape
         var builder = new StringBuilder();
 
         builder.Append("<shapegroup>\n");
-        for (var i = 0; i < Size; i++)
+        for (var i = 0; i < GetSizeOld(); i++)
         {
             builder.Append(shapes2[i].ToXml());
         }
@@ -89,7 +99,7 @@ public class ShapeGroup : Shape
 
     private void AddToShapes(Shape shape)
     {
-        Size++;
+        SetSizeOld(GetSizeOld() + 1);
         shapes2.Add(shape);
     }
 }
