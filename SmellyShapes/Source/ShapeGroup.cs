@@ -4,7 +4,7 @@ public class ShapeGroup : AbstractShape
 {
     private static readonly int InitialArraySize = 10;
     protected bool ReadOnly;
-    public IShape[] shapes = new IShape[InitialArraySize];
+    public AbstractShape[] shapes = new AbstractShape[InitialArraySize];
 
     public int size;
 
@@ -12,21 +12,21 @@ public class ShapeGroup : AbstractShape
     {
     }
 
-    public ShapeGroup(IShape[] shapes, bool readOnly)
+    public ShapeGroup(AbstractShape[] shapes, bool readOnly)
     {
         this.shapes = shapes;
         size = shapes.Length;
         ReadOnly = readOnly;
     }
 
-    public void Add(IShape shape)
+    public void Add(AbstractShape shape)
     {
         if (ReadOnly || Contains(shape)) return;
 
         AddToShapes(shape);
     }
 
-    private void AddToShapes(IShape shape)
+    private void AddToShapes(AbstractShape shape)
     {
         if (ShouldGrow()) GrowShapes();
 
@@ -39,7 +39,7 @@ public class ShapeGroup : AbstractShape
 
         void GrowShapes()
         {
-            var newShapes = new IShape[shapes.Length + InitialArraySize];
+            var newShapes = new AbstractShape[shapes.Length + InitialArraySize];
             for (var i = 0; i < size; i++) newShapes[i] = shapes[i];
             shapes = newShapes;
         }
@@ -50,7 +50,7 @@ public class ShapeGroup : AbstractShape
         }
     }
 
-    public bool Contains(IShape shape)
+    public bool Contains(AbstractShape shape)
     {
         for (var i = 0; i < size; i++)
             if (shapes[i].Equals(shape))
