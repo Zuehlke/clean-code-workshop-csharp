@@ -1,6 +1,6 @@
 namespace SmellyShapes.Source;
 
-public class Circle : SimpleShape
+public class Circle : AbstractShape
 {
     public Circle(int x, int y, int radius)
     {

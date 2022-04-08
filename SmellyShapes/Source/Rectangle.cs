@@ -1,6 +1,6 @@
 namespace SmellyShapes.Source;
 
-public class Rectangle : SimpleShape
+public class Rectangle : AbstractShape
 {
     private readonly int height;
 
