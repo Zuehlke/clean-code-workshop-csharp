@@ -16,7 +16,7 @@ public class SquareTest
     [Test]
     public void ToString_()
     {
-        var square = new Square(0, 0, 1, new Color("Red"));
+        var square = new Square(new Point(0, 0), 1, new Color("Red"));
         Assert.That(square.ToString(), Is.EqualTo("Square: (0:0) edgeLength=1 color=#FF0000"));
     }
 
