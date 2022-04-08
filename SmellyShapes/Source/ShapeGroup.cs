@@ -9,7 +9,6 @@ public class ShapeGroup : Shape
     private static readonly int InitialArraySize = 10;
     private readonly List<Shape> shapes2 = new();
     protected bool ReadOnly;
-    public Shape[] shapes = new Shape[InitialArraySize];
 
     public int size;
 
