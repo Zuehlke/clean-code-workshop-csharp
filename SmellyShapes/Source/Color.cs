@@ -73,13 +73,13 @@ public class Color
         return includeHexAndRGB ? GetColorFormatted() : GetColorAsText();
     }
 
-    private string GetColorFormatted()
+    public string GetColorFormatted()
     {
         return colorAsText + " " + colorAsHex + " " + colorAsRGB_Red + ":" + colorAsRGB_Green + ":" +
                colorAsRGB_Blue;
     }
 
-    private string GetColorAsText()
+    public string GetColorAsText()
     {
         return colorAsText;
     }
