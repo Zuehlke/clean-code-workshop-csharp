@@ -73,6 +73,11 @@ public class Color
         if (includeHexAndRGB)
             return colorAsText + " " + colorAsHex + " " + colorAsRGB_Red + ":" + colorAsRGB_Green + ":" +
                    colorAsRGB_Blue;
+        return GetColorAsText();
+    }
+
+    private string GetColorAsText()
+    {
         return colorAsText;
     }
 
