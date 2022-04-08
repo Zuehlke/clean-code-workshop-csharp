@@ -23,7 +23,7 @@ public class ShapeGroupTest
     [Test]
     public void Constructor_WithShapeArray()
     {
-        var shapeGroup = new ShapeGroup(new Shape[] { new Circle(0, 0, 0) }, true);
+        var shapeGroup = ShapeGroup.CreateShapeGroup(new Shape[] { new Circle(0, 0, 0) }, true);
 
         Assert.That(shapeGroup.Size, Is.EqualTo(1));
     }
