@@ -28,6 +28,17 @@ public class Color
         return includeHexAndRgb ? GetColorFormatted() : GetColorAsText();
     }
 
+    public string GetColorFormatted()
+    {
+        return colorAsText + " " + ColorAsHex + " " + ColorAsRgbRed + ":" + ColorAsRgbGreen + ":" +
+               ColorAsRgbBlue;
+    }
+
+    public string GetColorAsText()
+    {
+        return colorAsText;
+    }
+
     private void ConvertTextValueToRgbAndHex()
     {
         ErrorMessage = string.Empty;
@@ -57,16 +68,5 @@ public class Color
         {
             ErrorMessage = "Color not recognized";
         }
-    }
-
-    private string GetColorFormatted()
-    {
-        return colorAsText + " " + ColorAsHex + " " + ColorAsRgbRed + ":" + ColorAsRgbGreen + ":" +
-               ColorAsRgbBlue;
-    }
-
-    private string GetColorAsText()
-    {
-        return colorAsText;
     }
 }
