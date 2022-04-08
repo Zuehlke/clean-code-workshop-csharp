@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SmellyShapes.Source;
@@ -19,6 +20,7 @@ public class ShapeGroup : Shape
     private ShapeGroup(Shape[] shapes, bool readOnly)
     {
         this.shapes = shapes;
+        shapes2 = shapes.ToList();
         size = shapes.Length;
         ReadOnly = readOnly;
     }
@@ -56,6 +58,7 @@ public class ShapeGroup : Shape
         void AddToShapesLocal()
         {
             shapes[size++] = shape;
+            shapes2.Add(shape);
         }
     }
 
