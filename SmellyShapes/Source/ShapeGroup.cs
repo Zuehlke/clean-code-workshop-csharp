@@ -4,8 +4,6 @@ namespace SmellyShapes.Source;
 
 public class ShapeGroup : Shape
 {
-    public Shape[] Shapes = new Shape[InitialArraySize];
-
     public int Size;
 
     private const int InitialArraySize = 10;
