@@ -4,8 +4,6 @@ namespace SmellyShapes.Source;
 
 public class ShapeGroup : Shape
 {
-    public int Size;
-
     private readonly List<Shape> shapes2 = [];
 
     public ShapeGroup()
