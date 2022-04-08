@@ -30,7 +30,7 @@ public class Square : Rectangle
 
     public bool Contains(Point a, Point b)
     {
-        return Contains(a.X, a.Y) && Contains(b.X, b.Y);
+        return Contains(a) && Contains(b);
     }
 
     public override string ToXml()

@@ -48,13 +48,13 @@ public class ShapeGroup : Shape
         return false;
     }
 
-    public override bool Contains(int x, int y)
+    public override bool Contains(Point point)
     {
         foreach (var shape in shapes)
         {
             if (shape != null)
             {
-                if (shape.Contains(x, y))
+                if (shape.Contains(point))
                 {
                     return true;
                 }

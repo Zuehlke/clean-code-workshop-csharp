@@ -20,14 +20,14 @@ public class CircleTest
     [Test]
     public void Contains()
     {
-        Assert.That(circle.Contains(0, 0), Is.True);
-        Assert.That(circle.Contains(0, 1), Is.True);
-        Assert.That(circle.Contains(1, 0), Is.True);
+        Assert.That(circle.Contains(new Point(0, 0)), Is.True);
+        Assert.That(circle.Contains(new Point(0, 1)), Is.True);
+        Assert.That(circle.Contains(new Point(1, 0)), Is.True);
 
-        Assert.That(circle.Contains(1, 1), Is.False);
-        Assert.That(circle.Contains(-1, -1), Is.False);
-        Assert.That(circle.Contains(1, -1), Is.False);
-        Assert.That(circle.Contains(-1, 1), Is.False);
+        Assert.That(circle.Contains(new Point(1, 1)), Is.False);
+        Assert.That(circle.Contains(new Point(-1, -1)), Is.False);
+        Assert.That(circle.Contains(new Point(1, -1)), Is.False);
+        Assert.That(circle.Contains(new Point(-1, 1)), Is.False);
     }
 
     [Test]

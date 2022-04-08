@@ -17,14 +17,14 @@ public class RectangleTest
     [Test]
     public void Contains()
     {
-        Assert.That(rectangle.Contains(0, 0), Is.True);
-        Assert.That(rectangle.Contains(1, 0), Is.True);
-        Assert.That(rectangle.Contains(1, 1), Is.True);
-        Assert.That(rectangle.Contains(2, 1), Is.True);
+        Assert.That(rectangle.Contains(new Point(0, 0)), Is.True);
+        Assert.That(rectangle.Contains(new Point(1, 0)), Is.True);
+        Assert.That(rectangle.Contains(new Point(1, 1)), Is.True);
+        Assert.That(rectangle.Contains(new Point(2, 1)), Is.True);
 
-        Assert.That(rectangle.Contains(2, 2), Is.False);
-        Assert.That(rectangle.Contains(-1, 0), Is.False);
-        Assert.That(rectangle.Contains(0, -1), Is.False);
+        Assert.That(rectangle.Contains(new Point(2, 2)), Is.False);
+        Assert.That(rectangle.Contains(new Point(-1, 0)), Is.False);
+        Assert.That(rectangle.Contains(new Point(0, -1)), Is.False);
     }
 
     [Test]

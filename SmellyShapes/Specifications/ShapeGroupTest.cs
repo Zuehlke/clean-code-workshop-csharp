@@ -83,7 +83,7 @@ public class ShapeGroupTest
     {
         var shapeGroup = new ShapeGroup();
 
-        Assert.That(shapeGroup.Contains(0, 0), Is.False);
+        Assert.That(shapeGroup.Contains(new Point(0, 0)), Is.False);
     }
 
     [Test]
@@ -92,7 +92,7 @@ public class ShapeGroupTest
         var shapeGroup = new ShapeGroup();
         shapeGroup.Add(new Circle(new Point(0, 0), 0));
 
-        Assert.That(shapeGroup.Contains(0, 0), Is.True);
+        Assert.That(shapeGroup.Contains(new Point(0, 0)), Is.True);
     }
 
     [Test]
