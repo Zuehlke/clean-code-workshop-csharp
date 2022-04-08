@@ -60,14 +60,11 @@ public class Circle : Shape
     {
         var builder = new StringBuilder();
 
-        if (this is Circle circle)
-        {
-            builder.Append("<circle");
-            builder.Append(" x=\"" + circle.X + "\"");
-            builder.Append(" y=\"" + circle.Y + "\"");
-            builder.Append(" radius=\"" + circle.Radius + "\"");
-            builder.Append(" />\n");
-        }
+        builder.Append("<circle");
+        builder.Append(" x=\"" + X + "\"");
+        builder.Append(" y=\"" + Y + "\"");
+        builder.Append(" radius=\"" + Radius + "\"");
+        builder.Append(" />\n");
 
         return builder.ToString();
     }
