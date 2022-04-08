@@ -19,10 +19,10 @@ public class Circle : Shape
 
     public int Radius { get; }
 
-    public override bool Contains(int x, int y)
+    public override bool Contains(Point point)
     {
-        var deltaX = x - X;
-        var deltaY = y - Y;
+        var deltaX = point.X - X;
+        var deltaY = point.Y - Y;
         var result = Square(deltaX) + Square(deltaY) <= Square(Radius);
 
         return result;
