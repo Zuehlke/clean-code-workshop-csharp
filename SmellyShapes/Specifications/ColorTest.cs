@@ -10,21 +10,21 @@ public class ColorTest
     public void GetErrorMessage_InvalidColor()
     {
         var c = new Color("INVALIDColor_N4me");
-        Assert.That(c.GetErrorMessage(), Is.EqualTo("Color not recognized"));
+        Assert.That(c.ErrorMessage, Is.EqualTo("Color not recognized"));
     }
 
     [Test]
     public void GetErrorMessage_Magenta()
     {
         var c = new Color("Magenta");
-        Assert.That(c.GetErrorMessage(), Is.EqualTo("Color not recognized"));
+        Assert.That(c.ErrorMessage, Is.EqualTo("Color not recognized"));
     }
 
     [Test]
     public void GetErrorMessage_Cyan()
     {
         var c = new Color("Cyan");
-        Assert.That(c.GetErrorMessage(), Is.EqualTo("Color not recognized"));
+        Assert.That(c.ErrorMessage, Is.EqualTo("Color not recognized"));
     }
 
     [Test]

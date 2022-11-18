@@ -40,9 +40,9 @@ namespace SmellyShapes.Source
         public override string ToString()
         {
             return "Circle: (" + X + "," + Y + ") radius= " + Radius
-                   + " RGB=" + Color.GetColorAsRGBRed() + ","
-                   + Color.GetColorAsRGBGreen() + ","
-                   + Color.GetColorAsRGBBlue();
+                   + " RGB=" + Color.ColorAsRGBRed + ","
+                   + Color.ColorAsRGBGreen + ","
+                   + Color.ColorAsRGBBlue;
         }
     }
 }

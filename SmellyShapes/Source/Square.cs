@@ -25,7 +25,7 @@ namespace SmellyShapes.Source
 
         public override string ToString()
         {
-            return $"Square: ({X}:{Y}) edgeLength={Width} color={c.GetColorAsHex()}";
+            return $"Square: ({X}:{Y}) edgeLength={Width} color={c.ColorAsHex}";
         }
 
         public bool Contains(int x1, int y1, int x2, int y2)

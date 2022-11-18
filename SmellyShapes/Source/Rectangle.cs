@@ -34,7 +34,7 @@ namespace SmellyShapes.Source
         public override string ToString()
         {
             return
-                $"Rectangle: ({X},{Y}) width={Width} height={height} color={c.GetColorAsHex()}";
+                $"Rectangle: ({X},{Y}) width={Width} height={height} color={c.ColorAsHex}";
         }
     }
 }
