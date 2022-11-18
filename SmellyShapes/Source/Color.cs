@@ -20,14 +20,14 @@ namespace SmellyShapes.Source
         {
             ErrorMessage = "";
             // set to Red
-            if ("Red".Equals(colorAsText))
+            if ("Red" == colorAsText)
             {
                 ColorAsRGBRed = "255";
                 ColorAsRGBBlue = "0";
                 ColorAsRGBGreen = "0";
                 ColorAsHex = "#FF0000";
             }
-            else if ("Blue".Equals(colorAsText))
+            else if ("Blue" == colorAsText)
             {
                 // set to Blue
                 ColorAsRGBRed = "0";
@@ -35,7 +35,7 @@ namespace SmellyShapes.Source
                 ColorAsRGBGreen = "0";
                 ColorAsHex = "#00FF00";
             }
-            else if ("Green".Equals(colorAsText))
+            else if ("Green" == colorAsText)
             {
                 // set to Green
                 ColorAsRGBRed = "0";
