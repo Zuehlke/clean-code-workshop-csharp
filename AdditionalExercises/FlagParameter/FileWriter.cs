@@ -1,7 +1,7 @@
 ﻿namespace AdditionalExercises.FlagParameter
 {
     /// <summary>
-    /// Demonstration of Flag Parameters
+    /// Demonstration of Flag Parameters.
     /// </summary>
     public class FileWriter
     {
@@ -15,6 +15,8 @@
             this.isInAppendMode = useAppendMode;
             this.isContentFlushed = false;
         }
+
+        public string Content => this.content;
 
         public void Write(string contentToWrite, bool doFlushContent)
         {
@@ -38,11 +40,6 @@
         public void FlushContent()
         {
             this.isContentFlushed = true;
-        }
-
-        public string GetContent()
-        {
-            return this.content;
         }
 
         public bool IsInAppendMode()

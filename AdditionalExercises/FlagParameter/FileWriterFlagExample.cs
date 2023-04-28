@@ -1,11 +1,10 @@
 ﻿namespace AdditionalExercises.FlagParameter
 {
-    using System;
     using System.IO;
 
-    public class FileWriterFlagExample
+    public static class FileWriterFlagExample
     {
-        public static void Main(String[] args) 
+        public static void Main() 
         {
             var file = File.ReadAllText("example.txt");
 
@@ -15,10 +14,10 @@
 
 
             // define readable constants??
-            bool APPEND_MODE = true;
-            bool OVERWRITE_MODE = false;
-            FileWriter appendingfileWriter = new FileWriter(file, APPEND_MODE);
-            FileWriter overwritingfileWriter = new FileWriter(file, OVERWRITE_MODE);
+            const bool appendMode = true;
+            const bool overwriteMode = false;
+            FileWriter appendingfileWriter = new FileWriter(file, appendMode);
+            FileWriter overwritingfileWriter = new FileWriter(file, overwriteMode);
 
 
             // Enums?

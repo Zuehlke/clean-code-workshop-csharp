@@ -12,7 +12,7 @@ public class FileWriterTest
 
         replacingFileWriter.Write("New Content", false);
 
-        Assert.That(replacingFileWriter.GetContent(), Is.EqualTo("New Content"));
+        Assert.That(replacingFileWriter.Content, Is.EqualTo("New Content"));
     }
 
     [Test]
@@ -22,7 +22,7 @@ public class FileWriterTest
 
         appendingFileWriter.Write("New Content", false);
 
-        Assert.That(appendingFileWriter.GetContent(), Is.EqualTo("Initial Content" + "New Content"));
+        Assert.That(appendingFileWriter.Content, Is.EqualTo("Initial Content" + "New Content"));
     }
 
     [Test]
@@ -32,7 +32,7 @@ public class FileWriterTest
 
         appendingFileWriter.Write("New Content", false);
 
-        Assert.That(appendingFileWriter.GetContent(), Is.EqualTo("Initial Content" + "New Content"));
+        Assert.That(appendingFileWriter.Content, Is.EqualTo("Initial Content" + "New Content"));
         Assert.That(appendingFileWriter.IsContentFlushed(), Is.False);
     }
 
@@ -43,7 +43,7 @@ public class FileWriterTest
 
         appendingFileWriter.Write("New Content", true);
 
-        Assert.That(appendingFileWriter.GetContent(), Is.EqualTo("Initial Content" + "New Content"));
+        Assert.That(appendingFileWriter.Content, Is.EqualTo("Initial Content" + "New Content"));
         Assert.That(appendingFileWriter.IsContentFlushed(), Is.True);
     }
 

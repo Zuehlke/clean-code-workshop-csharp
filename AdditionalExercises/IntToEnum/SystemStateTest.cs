@@ -6,56 +6,56 @@ namespace AdditionalExercises.IntToEnum;
 public class SystemStateTest
 {
     [Test]
-    public void testGetStateAllServicesOk()
+    public void TestGetStateAllServicesOk()
     {
-        var state = new SystemState(SystemState.ALL_SERVICES_OK);
-        Assert.That(state.getState(), Is.EqualTo(SystemState.ALL_SERVICES_OK));
+        var state = new SystemState(SystemState.AllServicesOk);
+        Assert.That(state.State, Is.EqualTo(SystemState.AllServicesOk));
     }
 
     [Test]
-    public void testGetStateCommunicationOk()
+    public void TestGetStateCommunicationOk()
     {
-        var state = new SystemState(SystemState.COMMUNICATION_OK);
-        Assert.That(state.getState(), Is.EqualTo(SystemState.COMMUNICATION_OK));
+        var state = new SystemState(SystemState.CommunicationOk);
+        Assert.That(state.State, Is.EqualTo(SystemState.CommunicationOk));
     }
 
     [Test]
-    public void testGetStateReportServiceFailure()
+    public void TestGetStateReportServiceFailure()
     {
-        var state = new SystemState(SystemState.REPORT_SERVICE_FAILURE);
-        Assert.That(state.getState(), Is.EqualTo(SystemState.REPORT_SERVICE_FAILURE));
+        var state = new SystemState(SystemState.ReportServiceFailure);
+        Assert.That(state.State, Is.EqualTo(SystemState.ReportServiceFailure));
     }
 
     [Test]
-    public void testGetDescriptionForStateAllServicesOk()
+    public void TestGetDescriptionForStateAllServicesOk()
     {
-        Assert.That(SystemState.getDescriptionForState(SystemState.ALL_SERVICES_OK), Is.EqualTo("All Services OK"));
+        Assert.That(SystemState.GetDescriptionForState(SystemState.AllServicesOk), Is.EqualTo("All Services OK"));
     }
 
     [Test]
-    public void testGetDescriptionForStateCommunicationOk()
+    public void TestGetDescriptionForStateCommunicationOk()
     {
-        Assert.That(SystemState.getDescriptionForState(SystemState.COMMUNICATION_OK), Is.EqualTo("Communication OK"));
+        Assert.That(SystemState.GetDescriptionForState(SystemState.CommunicationOk), Is.EqualTo("Communication OK"));
     }
 
     [Test]
-    public void testGetDescriptionForStateReportServiceFailure()
+    public void TestGetDescriptionForStateReportServiceFailure()
     {
-        Assert.That(SystemState.getDescriptionForState(SystemState.REPORT_SERVICE_FAILURE),
+        Assert.That(SystemState.GetDescriptionForState(SystemState.ReportServiceFailure),
             Is.EqualTo("ReportService Failure"));
     }
 
     [Test]
-    public void testGetDescriptionForUnknownState()
+    public void TestGetDescriptionForUnknownState()
     {
-        Assert.That(SystemState.getDescriptionForState(42), Is.EqualTo("Unknown state"));
-        Assert.That(SystemState.getDescriptionForState(-42), Is.EqualTo("Unknown state"));
+        Assert.That(SystemState.GetDescriptionForState(42), Is.EqualTo("Unknown state"));
+        Assert.That(SystemState.GetDescriptionForState(-42), Is.EqualTo("Unknown state"));
     }
 
     [Test]
-    public void testGetDescriptionForCornerCases()
+    public void TestGetDescriptionForCornerCases()
     {
-        Assert.That(SystemState.getDescriptionForState(7), Is.EqualTo("Unknown state"));
-        Assert.That(SystemState.getDescriptionForState(-1), Is.EqualTo("Unknown state"));
+        Assert.That(SystemState.GetDescriptionForState(7), Is.EqualTo("Unknown state"));
+        Assert.That(SystemState.GetDescriptionForState(-1), Is.EqualTo("Unknown state"));
     }
 }
