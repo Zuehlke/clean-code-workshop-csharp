@@ -1,4 +1,4 @@
-﻿namespace AdditionalExercises.MathUtils;
+﻿namespace AdditionalExercises.Duplication;
 
 public class MathUtils
 {

@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace AdditionalExercises.MathUtils;
+namespace AdditionalExercises.Duplication;
 
 [TestFixture]
 public class MathUtilsTest

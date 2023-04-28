@@ -1,4 +1,4 @@
-﻿namespace AdditionalExercises.FileWriter
+﻿namespace AdditionalExercises.FlagParameter
 {
     using System;
     using System.IO;

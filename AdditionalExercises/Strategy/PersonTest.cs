@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace AdditionalExercises.PersonExample;
+namespace AdditionalExercises.Strategy;
 
 [TestFixture]
 public class PersonTest

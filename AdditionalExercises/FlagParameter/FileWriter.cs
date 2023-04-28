@@ -1,4 +1,4 @@
-﻿namespace AdditionalExercises.FileWriter
+﻿namespace AdditionalExercises.FlagParameter
 {
     /// <summary>
     /// Demonstration of Flag Parameters

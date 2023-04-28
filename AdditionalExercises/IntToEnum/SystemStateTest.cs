@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace AdditionalExercises.EnumRefaSystemState;
+namespace AdditionalExercises.IntToEnum;
 
 [TestFixture]
 public class SystemStateTest

@@ -1,4 +1,4 @@
-﻿namespace AdditionalExercises.PersonExample
+﻿namespace AdditionalExercises.Strategy
 {
     using System;
     using System.Collections.Generic;

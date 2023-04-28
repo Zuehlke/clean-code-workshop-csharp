@@ -1,4 +1,4 @@
-﻿namespace AdditionalExercises.EnumRefaSystemState
+﻿namespace AdditionalExercises.IntToEnum
 {
     /// <summary>
     /// This class contains only an int as a symbolic system state.

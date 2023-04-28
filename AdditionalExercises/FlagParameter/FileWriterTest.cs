@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace AdditionalExercises.FileWriter;
+namespace AdditionalExercises.FlagParameter;
 
 [TestFixture]
 public class FileWriterTest
