@@ -3,7 +3,7 @@ namespace SmellyShapes.Source
     public class DrawingBoard : ShapeGroup
     {
         /// <summary>
-        ///     Use NoDate to indicate that no date is set (the equivalent of 'null Date' in Java)
+        ///     Use NoDate to indicate that no date is set (the equivalent of 'null Date' in Java).
         /// </summary>
         public static readonly DateTime NoDate = DateTime.MaxValue;
 

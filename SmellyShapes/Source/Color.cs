@@ -26,16 +26,17 @@ namespace SmellyShapes.Source
 
         private void ConvertTextValueToRgbAndHex()
         {
-            ErrorMessage = "";
+            ErrorMessage = string.Empty;
+
             // set to Red
-            if ("Red" == colorAsText)
+            if (colorAsText == "Red")
             {
                 ColorAsRgbRed = "255";
                 ColorAsRgbBlue = "0";
                 ColorAsRgbGreen = "0";
                 ColorAsHex = "#FF0000";
             }
-            else if ("Blue" == colorAsText)
+            else if (colorAsText == "Blue")
             {
                 // set to Blue
                 ColorAsRgbRed = "0";
@@ -43,7 +44,7 @@ namespace SmellyShapes.Source
                 ColorAsRgbGreen = "0";
                 ColorAsHex = "#00FF00";
             }
-            else if ("Green" == colorAsText)
+            else if (colorAsText == "Green")
             {
                 // set to Green
                 ColorAsRgbRed = "0";

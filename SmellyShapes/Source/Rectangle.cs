@@ -2,8 +2,6 @@ namespace SmellyShapes.Source
 {
     public class Rectangle : SimpleShape
     {
-        protected Color C { get; set; } = new Color("Blue");
-
         private readonly int height;
 
         public Rectangle(int x, int y, int width, int height)
@@ -21,6 +19,8 @@ namespace SmellyShapes.Source
         public int X { get; }
 
         public int Y { get; }
+
+        protected Color C { get; set; } = new Color("Blue");
 
         public override bool Contains(int x, int y)
         {

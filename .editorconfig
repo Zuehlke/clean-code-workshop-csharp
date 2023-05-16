@@ -247,8 +247,21 @@ dotnet_diagnostic.CA1062.severity = none # Validate arguments of public methods
 
 dotnet_diagnostic.IDE0058.severity = none # Remove unnecessary expression value
 
+dotnet_diagnostic.SA0001.severity = none # XML comment analysis disabled
+dotnet_diagnostic.SA1101.severity = none # Prefix local calls with this
+dotnet_diagnostic.SX1101.severity = warning # Do not prefix local calls with this
+dotnet_diagnostic.SA1600.severity = none # Elements should be documented
+dotnet_diagnostic.SA1601.severity = none # Partial elements should be documented
+dotnet_diagnostic.SA1602.severity = none # Enumeration items should be documented
+dotnet_diagnostic.SA1604.severity = none # Element documentation should have summary
+dotnet_diagnostic.SA1611.severity = none # Element parameters must be documented
+dotnet_diagnostic.SA1615.severity = none # Element return values must be documented
+dotnet_diagnostic.SA1618.severity = none # Generic type parameters should be documented
+dotnet_diagnostic.SA1633.severity = none # File should have header
+
 [*/**Test.cs]
 dotnet_diagnostic.CA1707.severity = none # Identifiers should not contain underscores
+dotnet_diagnostic.SA1201.severity = none # A field should not follow a method
 
 # Disabled for exercise
 [AdditionalExercises/FlagParameter/FileWriterFlagExample.cs]
@@ -256,6 +269,7 @@ dotnet_diagnostic.IDE0059.severity = none # Remove unnecessary value assignment
 
 [SmellyShapes/Source/ShapeGroup.cs]
 dotnet_diagnostic.CA1051.severity = none # Do not declare visible instance fields
+dotnet_diagnostic.SA1401.severity = none # Field should be private
 
 [SmellyShapes/Source/DrawingBoard.cs]
 dotnet_diagnostic.CA1822.severity = none # Mark members as static
