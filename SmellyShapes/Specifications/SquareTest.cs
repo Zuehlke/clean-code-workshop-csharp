@@ -47,7 +47,7 @@ public class SquareTest
     }
 
     [Test]
-    public void GetHeigth()
+    public void GetHeight()
     {
         Assert.That(() => new Square(0, 0, 0).Height, Throws.Exception.TypeOf<InvalidOperationException>());
     }
