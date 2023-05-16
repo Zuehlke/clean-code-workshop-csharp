@@ -38,6 +38,7 @@ public class MathUtilsTest
     {
         // 0 is dividable by every number
         Assert.That(MathUtils.IsDivisibleBy3(0), Is.True);
+
         // 1 isn't dividable by any number exept 1 itself
         Assert.That(MathUtils.IsDivisibleBy3(1), Is.False);
     }
@@ -74,6 +75,7 @@ public class MathUtilsTest
     {
         // 0 is dividable by every number
         Assert.That(MathUtils.IsDivisibleBy5(0), Is.True);
+
         // 1 isn't dividable by any number exept 1 itself
         Assert.That(MathUtils.IsDivisibleBy5(1), Is.False);
     }
