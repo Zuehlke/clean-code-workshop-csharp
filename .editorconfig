@@ -247,8 +247,17 @@ dotnet_diagnostic.CA1062.severity = none # Validate arguments of public methods
 
 dotnet_diagnostic.IDE0058.severity = none # Remove unnecessary expression value
 
-# Disabled for clean code course
-dotnet_diagnostic.CA1051.severity = none # Do not declare visible instance fields
-
 [*/**Test.cs]
 dotnet_diagnostic.CA1707.severity = none # Identifiers should not contain underscores
+
+# Disabled for exercise
+[AdditionalExercises/FlagParameter/FileWriterFlagExample.cs]
+dotnet_diagnostic.IDE0059.severity = none # Remove unnecessary value assignment
+
+[SmellyShapes/Source/ShapeGroup.cs]
+dotnet_diagnostic.CA1051.severity = none # Do not declare visible instance fields
+
+[SmellyShapes/Source/DrawingBoard.cs]
+dotnet_diagnostic.CA1822.severity = none # Mark members as static
+dotnet_diagnostic.IDE0059.severity = none # Remove unnecessary value assignment
+dotnet_diagnostic.IDE0060.severity = none # Remove unused parameter

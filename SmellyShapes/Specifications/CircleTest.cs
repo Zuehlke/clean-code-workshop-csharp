@@ -9,8 +9,10 @@ public class CircleTest
     [SetUp]
     public void SetUp()
     {
-        circle = new Circle(0, 0, 1);
-        circle.Color = new Color("Red");
+        circle = new Circle(0, 0, 1)
+        {
+            Color = new Color("Red"),
+        };
     }
 
     private Circle circle;
