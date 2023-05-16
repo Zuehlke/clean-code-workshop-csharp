@@ -1,11 +1,7 @@
-﻿namespace AdditionalExercises.MathUtils;
+﻿namespace AdditionalExercises.Duplication;
 
-public class MathUtils
+public static class MathUtils
 {
-    private MathUtils()
-    {
-    }
-
     public static bool IsDivisibleBy3(int number)
     {
         return number % 3 == 0;

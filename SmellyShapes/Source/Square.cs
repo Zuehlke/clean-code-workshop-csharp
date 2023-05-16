@@ -12,7 +12,7 @@ namespace SmellyShapes.Source
         public Square(int x, int y, int edgeLength, Color color)
             : base(x, y, edgeLength, edgeLength)
         {
-            c = color;
+            C = color;
         }
 
         public override int Height =>
@@ -25,7 +25,7 @@ namespace SmellyShapes.Source
 
         public override string ToString()
         {
-            return $"Square: ({X}:{Y}) edgeLength={Width} color={c.ColorAsHex}";
+            return $"Square: ({X}:{Y}) edgeLength={Width} color={C.ColorAsHex}";
         }
 
         public bool Contains(int x1, int y1, int x2, int y2)

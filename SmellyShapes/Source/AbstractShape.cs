@@ -19,18 +19,16 @@ namespace SmellyShapes.Source
                 builder.Append(" radius=\"" + circle.Radius + "\"");
                 builder.Append(" />\n");
             }
-            else if (this is Square)
+            else if (this is Square square)
             {
-                var square = (Square) this;
                 builder.Append("<square");
                 builder.Append(" x=\"" + square.X + "\"");
                 builder.Append(" y=\"" + square.Y + "\"");
                 builder.Append(" edgeLength=\"" + square.Width + "\"");
                 builder.Append(" />\n");
             }
-            else if (this is Rectangle)
+            else if (this is Rectangle rectangle)
             {
-                var rectangle = (Rectangle) this;
                 builder.Append("<rectangle");
                 builder.Append(" x=\"" + rectangle.X + "\"");
                 builder.Append(" y=\"" + rectangle.Y + "\"");
@@ -38,12 +36,11 @@ namespace SmellyShapes.Source
                 builder.Append(" height=\"" + rectangle.Height + "\"");
                 builder.Append(" />\n");
             }
-            else if (this is ShapeGroup)
+            else if (this is ShapeGroup group)
             {
-                var group = (ShapeGroup) this;
                 builder.Append("<shapegroup>\n");
-                for (var i = 0; i < group.size; i++)
-                    builder.Append(group.shapes[i].ToXml());
+                for (var i = 0; i < group.Size; i++)
+                    builder.Append(group.Shapes[i].ToXml());
                 builder.Append("</shapegroup>\n");
             }
             else

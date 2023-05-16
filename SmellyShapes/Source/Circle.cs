@@ -14,7 +14,7 @@ public class Circle : SimpleShape
     }
 
     /// <summary>
-    ///     The shape color
+    ///     Gets or sets the shape color.
     /// </summary>
     public Color Color { get; set; } = new Color("Green");
 
@@ -45,8 +45,8 @@ public class Circle : SimpleShape
     public override string ToString()
     {
         return "Circle: (" + X + "," + Y + ") radius= " + Radius
-               + " RGB=" + Color.ColorAsRGBRed + ","
-               + Color.ColorAsRGBGreen + ","
-               + Color.ColorAsRGBBlue;
+               + " RGB=" + Color.ColorAsRgbRed + ","
+               + Color.ColorAsRgbGreen + ","
+               + Color.ColorAsRgbBlue;
     }
 }

@@ -1,12 +1,12 @@
 ﻿using NUnit.Framework;
 
-namespace AdditionalExercises.MathUtils;
+namespace AdditionalExercises.Duplication;
 
 [TestFixture]
 public class MathUtilsTest
 {
     [Test]
-    public void testIsDivisibleBy3_Given_FactorsOf_3()
+    public void TestIsDivisibleBy3_Given_FactorsOf_3()
     {
         Assert.That(MathUtils.IsDivisibleBy3(3), Is.True);
         Assert.That(MathUtils.IsDivisibleBy3(6), Is.True);
@@ -16,7 +16,7 @@ public class MathUtilsTest
     }
 
     [Test]
-    public void testIsDivisibleBy3_Given_Negative_FactorsOf_3()
+    public void TestIsDivisibleBy3_Given_Negative_FactorsOf_3()
     {
         Assert.That(MathUtils.IsDivisibleBy3(-3), Is.True);
         Assert.That(MathUtils.IsDivisibleBy3(-6), Is.True);
@@ -26,7 +26,7 @@ public class MathUtilsTest
     }
 
     [Test]
-    public void testIsDivisibleBy3_Given_FailingInputs()
+    public void TestIsDivisibleBy3_Given_FailingInputs()
     {
         Assert.That(MathUtils.IsDivisibleBy3(2), Is.False);
         Assert.That(MathUtils.IsDivisibleBy3(4), Is.False);
@@ -34,7 +34,7 @@ public class MathUtilsTest
     }
 
     [Test]
-    public void testIsDivisibleBy3_Given_SpecialInputs()
+    public void TestIsDivisibleBy3_Given_SpecialInputs()
     {
         // 0 is dividable by every number
         Assert.That(MathUtils.IsDivisibleBy3(0), Is.True);
@@ -42,10 +42,10 @@ public class MathUtilsTest
         Assert.That(MathUtils.IsDivisibleBy3(1), Is.False);
     }
 
-    // ----------------------------------------------------------
+    //// ----------------------------------------------------------
 
     [Test]
-    public void testIsDivisibleBy5_FactorsOf_5()
+    public void TestIsDivisibleBy5_FactorsOf_5()
     {
         Assert.That(MathUtils.IsDivisibleBy5(5), Is.True);
         Assert.That(MathUtils.IsDivisibleBy5(10), Is.True);
@@ -54,7 +54,7 @@ public class MathUtilsTest
     }
 
     [Test]
-    public void testIsDivisibleBy5_Given_Negative_FactorsOf_5()
+    public void TestIsDivisibleBy5_Given_Negative_FactorsOf_5()
     {
         Assert.That(MathUtils.IsDivisibleBy5(-5), Is.True);
         Assert.That(MathUtils.IsDivisibleBy5(-10), Is.True);
@@ -63,14 +63,14 @@ public class MathUtilsTest
     }
 
     [Test]
-    public void testIsDivisibleBy5_Given_FailingInputs()
+    public void TestIsDivisibleBy5_Given_FailingInputs()
     {
         Assert.That(MathUtils.IsDivisibleBy5(4), Is.False);
         Assert.That(MathUtils.IsDivisibleBy5(6), Is.False);
     }
 
     [Test]
-    public void testIsDivisibleBy5_Given_SpecialInputs()
+    public void TestIsDivisibleBy5_Given_SpecialInputs()
     {
         // 0 is dividable by every number
         Assert.That(MathUtils.IsDivisibleBy5(0), Is.True);

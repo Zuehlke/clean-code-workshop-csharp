@@ -2,9 +2,9 @@ namespace SmellyShapes.Source
 {
     public class ShapeGroup : ComplexShape
     {
-        public IShape[] shapes = new IShape[10];
+        public IShape[] Shapes = new IShape[10];
 
-        public int size;
+        public int Size;
 
         public ShapeGroup()
         {
@@ -12,8 +12,8 @@ namespace SmellyShapes.Source
 
         public ShapeGroup(IShape[] shapes, bool readOnly)
         {
-            this.shapes = shapes;
-            size = shapes.Length;
+            this.Shapes = shapes;
+            Size = shapes.Length;
             ReadOnly = readOnly;
         }
 
@@ -21,30 +21,30 @@ namespace SmellyShapes.Source
         {
             if (!ReadOnly)
             {
-                var newSize = size + 1;
-                if (newSize > shapes.Length)
+                var newSize = Size + 1;
+                if (newSize > Shapes.Length)
                 {
-                    var newShapes = new IShape[shapes.Length + 10];
-                    for (var i = 0; i < size; i++) newShapes[i] = shapes[i];
-                    shapes = newShapes;
+                    var newShapes = new IShape[Shapes.Length + 10];
+                    for (var i = 0; i < Size; i++) newShapes[i] = Shapes[i];
+                    Shapes = newShapes;
                 }
 
                 if (Contains(shape)) return;
-                shapes[size++] = shape;
+                Shapes[Size++] = shape;
             }
         }
 
         public bool Contains(IShape shape)
         {
-            for (var i = 0; i < size; i++)
-                if (shapes[i].Equals(shape))
+            for (var i = 0; i < Size; i++)
+                if (Shapes[i].Equals(shape))
                     return true;
             return false;
         }
 
         public override bool Contains(int x, int y)
         {
-            foreach (var shape in shapes)
+            foreach (var shape in Shapes)
                 if (shape != null)
                     if (shape.Contains(x, y))
                         return true;

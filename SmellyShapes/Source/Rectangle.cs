@@ -2,7 +2,6 @@ namespace SmellyShapes.Source
 {
     public class Rectangle : SimpleShape
     {
-        protected Color c = new Color("Blue");
         private readonly int height;
 
         public Rectangle(int x, int y, int width, int height)
@@ -21,6 +20,8 @@ namespace SmellyShapes.Source
 
         public int Y { get; }
 
+        protected Color C { get; set; } = new Color("Blue");
+
         public override bool Contains(int x, int y)
         {
             return X <= x && x <= X + Width && Y <= y && y <= Y + height;
@@ -34,7 +35,7 @@ namespace SmellyShapes.Source
         public override string ToString()
         {
             return
-                $"Rectangle: ({X},{Y}) width={Width} height={height} color={c.ColorAsHex}";
+                $"Rectangle: ({X},{Y}) width={Width} height={height} color={C.ColorAsHex}";
         }
     }
 }
