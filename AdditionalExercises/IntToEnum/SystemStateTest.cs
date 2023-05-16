@@ -41,7 +41,8 @@ public class SystemStateTest
     [Test]
     public void TestGetDescriptionForStateReportServiceFailure()
     {
-        Assert.That(SystemState.GetDescriptionForState(SystemState.ReportServiceFailure),
+        Assert.That(
+            SystemState.GetDescriptionForState(SystemState.ReportServiceFailure),
             Is.EqualTo("ReportService Failure"));
     }
 

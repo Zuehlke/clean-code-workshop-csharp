@@ -15,14 +15,15 @@ public class ShapeGroupTest
         var xml = shapeGroup.ToXml();
 
         Assert.That(
-            xml, Is.EqualTo(
+            xml,
+            Is.EqualTo(
                 "<shapegroup>\n<rectangle x=\"0\" y=\"0\" width=\"2\" height=\"1\" />\n</shapegroup>\n"));
     }
 
     [Test]
     public void Constructor_WithShapeArray()
     {
-        var shapeGroup = new ShapeGroup(new IShape[] {new Circle(0, 0, 0)}, true);
+        var shapeGroup = new ShapeGroup(new IShape[] { new Circle(0, 0, 0) }, true);
 
         Assert.That(shapeGroup.Size, Is.EqualTo(1));
     }
@@ -68,7 +69,10 @@ public class ShapeGroupTest
         var shapeGroup = new ShapeGroup();
         shapeGroup.SetReadOnly(false);
 
-        for (var i = 0; i < 11; i++) shapeGroup.Add(new Circle(0, 0, 0));
+        for (var i = 0; i < 11; i++)
+        {
+            shapeGroup.Add(new Circle(0, 0, 0));
+        }
 
         Assert.That(shapeGroup.Size, Is.EqualTo(11));
     }
