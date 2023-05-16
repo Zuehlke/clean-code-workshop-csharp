@@ -31,7 +31,7 @@ public class ColorTest
     public void GetColorFormatted_Red()
     {
         var color = new Color("Red");
-        var colorFormatted = color.GetColorAsText();
+        var colorFormatted = color.ColorAsText;
         Assert.That(colorFormatted, Is.EqualTo("Red"));
     }
 
@@ -39,7 +39,7 @@ public class ColorTest
     public void GetColorFormatted_Green()
     {
         var color = new Color("Green");
-        var colorFormatted = color.GetColorAsText();
+        var colorFormatted = color.ColorAsText;
         Assert.That(colorFormatted, Is.EqualTo("Green"));
     }
 
