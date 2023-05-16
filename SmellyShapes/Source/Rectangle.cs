@@ -2,7 +2,8 @@ namespace SmellyShapes.Source
 {
     public class Rectangle : SimpleShape
     {
-        protected Color C = new Color("Blue");
+        protected Color C { get; set; } = new Color("Blue");
+
         private readonly int height;
 
         public Rectangle(int x, int y, int width, int height)

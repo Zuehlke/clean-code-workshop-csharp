@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SmellyShapes.Source
 {
@@ -23,6 +24,7 @@ namespace SmellyShapes.Source
             drawingBoard.DrawOnScreen();
         }
 
+        [SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "Implementation removed for exercise")]
         public void DrawOnScreen()
         {
             var previousStart = NoDate;
@@ -32,6 +34,7 @@ namespace SmellyShapes.Source
             // ... removed for exercise
         }
 
+        [SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "Implementation removed for exercise")]
         public void Load(string file)
         {
             // ... removed for exercise
