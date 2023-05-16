@@ -5,13 +5,14 @@ public class Color
     private const string Red = "Red";
     private const string Blue = "Blue";
     private const string Green = "Green";
-    private readonly string colorAsText;
 
     public Color(string colorAsText)
     {
-        this.colorAsText = colorAsText;
+        ColorAsText = colorAsText;
         ConvertTextValueToRgbAndHex();
     }
+
+    public string ColorAsText { get; }
 
     public string ColorAsHex { get; private set; }
 
@@ -25,39 +26,34 @@ public class Color
 
     public string GetColorFormatted(bool includeHexAndRgb)
     {
-        return includeHexAndRgb ? GetColorFormatted() : GetColorAsText();
+        return includeHexAndRgb ? GetColorFormatted() : ColorAsText;
     }
 
     public string GetColorFormatted()
     {
-        return colorAsText + " " + ColorAsHex + " " + ColorAsRgbRed + ":" + ColorAsRgbGreen + ":" +
+        return ColorAsText + " " + ColorAsHex + " " + ColorAsRgbRed + ":" + ColorAsRgbGreen + ":" +
                ColorAsRgbBlue;
-    }
-
-    public string GetColorAsText()
-    {
-        return colorAsText;
     }
 
     private void ConvertTextValueToRgbAndHex()
     {
         ErrorMessage = string.Empty;
 
-        if (colorAsText == Red)
+        if (ColorAsText == Red)
         {
             ColorAsRgbRed = "255";
             ColorAsRgbBlue = "0";
             ColorAsRgbGreen = "0";
             ColorAsHex = "#FF0000";
         }
-        else if (colorAsText == Blue)
+        else if (ColorAsText == Blue)
         {
             ColorAsRgbRed = "0";
             ColorAsRgbBlue = "255";
             ColorAsRgbGreen = "0";
             ColorAsHex = "#00FF00";
         }
-        else if (colorAsText == Green)
+        else if (ColorAsText == Green)
         {
             ColorAsRgbRed = "0";
             ColorAsRgbBlue = "0";
