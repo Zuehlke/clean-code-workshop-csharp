@@ -1,0 +1,53 @@
+\documentclass[a3paper]{article}
+%\documentclass{standalone}
+\usepackage{listings}             % Include the listings-package
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{beramono}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{multicol}
+% \usepackage{showframe} %Activate for debugging
+\usepackage[top=0.25in, bottom=0.25in, left=0.25in, right=0.25in, landscape]{geometry}
+
+%\input{settings_cpp}
+\input{style_csharp}
+\lstset{escapechar=@,style=customCSharp}
+
+
+\newcommand{\cssFile}[2]{#1/#2}
+\newcommand{\CSharpPath}{../SmellyShapes/Source}
+\newcommand{\importFile}[1]
+{ 
+ % caption handling
+ \lstinputlisting[caption=#1]{\cssFile{\CSharpPath}{#1} }
+}
+
+\begin{document}
+
+\begin{multicols*}{4}
+
+\importFile{AbstractShape.cs}
+\importFile{Circle.cs}
+\vfill\null
+\columnbreak
+
+\importFile{Color.cs}
+\importFile{ComplexShape.cs}
+\importFile{DrawingBoard.cs}
+\vfill\null
+\columnbreak
+
+\importFile{Rectangle.cs}
+\importFile{IShape.cs}
+\importFile{ShapeGroup.cs}
+\importFile{SimpleShape.cs}
+\vfill\null
+\columnbreak
+
+\importFile{Square.cs}
+
+\end{multicols*}
+
+
+\end{document}
+

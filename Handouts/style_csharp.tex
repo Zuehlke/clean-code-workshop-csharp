@@ -1,0 +1,31 @@
+\definecolor{bluekeywords}{rgb}{0.13,0.13,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.9,0,0}
+
+\lstdefinestyle{customCSharp}{
+	backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+	belowcaptionskip=0\baselineskip,
+	captionpos=top,
+	breaklines=true,
+	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	frame=topline,
+	numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+	numberstyle=\tiny\color{gray}, % the style that is used for the line-numbers
+	rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+	xleftmargin=\parindent,
+	language=[Sharp]C,
+	showstringspaces=false,
+	showspaces=false,
+	showtabs=false,	
+	breakatwhitespace=true,
+	escapeinside={(*@}{@*)},
+	commentstyle=\color{greencomments},
+	keywordstyle=\color{bluekeywords}\bfseries,
+	stringstyle=\color{redstrings},
+	basicstyle=\tiny\ttfamily,
+	% for some reason literal requires tabsize to be set (the value is ignored)
+	tabsize=2,
+	% Replace two spaces with one space
+	literate={\ \ }{{\ }}1,
+}
