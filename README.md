@@ -4,8 +4,9 @@ Repository for the exercise code of the Zühlke Clean Code Workshop for C#.
 
 ## Branches
 
-* `master` initial situation as on the A3 handout, checkout `master` (and branch from it) to start with the exercices
+* `master` initial situation as on the A3 handout (the smelly shapes PDF), checkout `master` (and branch from it) to start with the exercices
 * `foundation-solution` solution to the exercises with a single commit per step, compare you solution with this branch
+* `smelly-shapes-pdf` initial situation including the A3 handout (the smelly shapes PDF) in the `/Handouts` folder (used by Trainer only)
 
 ## How to update the solution
 
@@ -19,3 +20,4 @@ Repository for the exercise code of the Zühlke Clean Code Workshop for C#.
 8. `git rebase -i HEAD~1`
 9. delete last commit (reformat)
 10. `git push --force-with-lease`
+11. repeat steps 3-10 for branch `smelly-shapes-pdf`
