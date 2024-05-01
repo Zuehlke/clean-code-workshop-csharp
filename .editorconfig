@@ -142,6 +142,7 @@ csharp_style_pattern_matching_over_is_with_cast_check = true:warning
 csharp_style_pattern_matching_over_as_with_null_check = true:warning
 csharp_style_prefer_not_pattern = true:warning
 csharp_style_prefer_extended_property_pattern = true:warning
+csharp_style_prefer_primary_constructors = false:warning
 csharp_keep_existing_linebreaks = true
 csharp_keep_existing_initializer_arrangement = true
 csharp_wrap_object_and_collection_initializer_style = chop_if_long

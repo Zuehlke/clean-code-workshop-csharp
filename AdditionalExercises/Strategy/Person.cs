@@ -11,7 +11,7 @@
         private bool capitalizeSurname;
         private bool olympicMode;
 
-        private static List<String> SurnameFirst = new List<String> { "CHN", "KOR" };
+        private static List<String> SurnameFirst = ["CHN", "KOR"];
 
 
         public Person(String familyName, String givenName, String nationality)

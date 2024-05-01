@@ -33,7 +33,7 @@ public class CircleTest
     [Test]
     public void CountContainingPoints()
     {
-        var result = circle.CountContainingPoints(new[] {0, 10}, new[] {0, 10});
+        var result = circle.CountContainingPoints([0, 10], [0, 10]);
         Assert.That(result, Is.EqualTo(1));
     }
 
