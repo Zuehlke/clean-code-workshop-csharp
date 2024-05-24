@@ -58,7 +58,7 @@ public class ShapeToXmlConverter : IShapeVisitor<string>
 
     public string Visit(Square square)
     {
-        throw new NotImplementedException();
+        return ToXmlStatic(square);
     }
 
     public static string ToXmlStatic(Square square)
