@@ -33,7 +33,7 @@ public class Square : Rectangle
 
     public override string ToXml()
     {
-        return ShapeToXmlConverter.ToXmlStatic(this);
+        return ShapeToXmlConverter.Convert(this);
     }
 
     public override T Accept<T>(IShapeVisitor<T> shapeVisitor)
