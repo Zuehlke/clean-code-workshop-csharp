@@ -16,7 +16,9 @@ public class PersonNameStrategy
 
     public static PersonNameStrategy Create(string nationality, bool capitalizeSurname, bool olympicMode)
     {
-        return new PersonNameStrategy(nationality, capitalizeSurname, olympicMode);
+        return olympicMode
+            ? new OlympicPersonNameStrategy(nationality, capitalizeSurname, true)
+            : new DefaultPersonNameStrategy(nationality, capitalizeSurname, false);
     }
 
     public string NameString(string givenName, string familyName)
