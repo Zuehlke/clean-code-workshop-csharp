@@ -2,7 +2,7 @@ namespace AdditionalExercises.Strategy;
 
 public class OlympicPersonNameStrategy : PersonNameStrategy
 {
-    protected static readonly List<string> SurnameFirst = ["CHN", "KOR"];
+    private static readonly List<string> SurnameFirst = ["CHN", "KOR"];
 
     public OlympicPersonNameStrategy(string nationality, bool capitalizeSurname)
         : base(nationality, capitalizeSurname)
