@@ -43,7 +43,7 @@ public class ShapeToXmlConverter : IShapeVisitor<string>
 
     public string Visit(ShapeGroup shapeGroup)
     {
-        throw new NotImplementedException();
+        return ToXmlStatic(shapeGroup);
     }
 
     public static string ToXmlStatic(ShapeGroup shapeGroup)
