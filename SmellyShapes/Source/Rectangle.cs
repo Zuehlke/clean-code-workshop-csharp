@@ -53,4 +53,9 @@ public class Rectangle : Shape
 
         return builder.ToString();
     }
+
+    public override T Accept<T>(IShapeVisitor<T> shapeVisitor)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -67,6 +67,11 @@ public class Circle : Shape
         return builder.ToString();
     }
 
+    public override T Accept<T>(IShapeVisitor<T> shapeVisitor)
+    {
+        throw new NotImplementedException();
+    }
+
     private static int Square(int i)
     {
         return i * i;
