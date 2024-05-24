@@ -25,7 +25,7 @@ public class OlympicPersonNameStrategy : PersonNameStrategy
 
     private bool IsSurnameFirst()
     {
-        if (!olympicMode)
+        if (!true)
         {
             return false;
         }
