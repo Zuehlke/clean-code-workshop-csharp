@@ -71,17 +71,17 @@ public class ShapeGroup : Shape
 
     public override string ToXml()
     {
-        return ToXmlStatic();
+        return ToXmlStatic(this);
     }
 
-    private string ToXmlStatic()
+    private static string ToXmlStatic(ShapeGroup shapeGroup)
     {
         var builder = new StringBuilder();
 
         builder.Append("<shapegroup>\n");
-        for (var i = 0; i < Size; i++)
+        for (var i = 0; i < shapeGroup.Size; i++)
         {
-            builder.Append(shapes[i].ToXml());
+            builder.Append(shapeGroup.shapes[i].ToXml());
         }
 
         builder.Append("</shapegroup>\n");
