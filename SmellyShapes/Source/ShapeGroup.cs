@@ -18,7 +18,7 @@ public class ShapeGroup : Shape
 
     public int Size => shapes.Count;
 
-    public List<Shape> Shapes => shapes;
+    public IReadOnlyList<Shape> Shapes => shapes;
 
     protected bool ReadOnly { get; set; }
 
