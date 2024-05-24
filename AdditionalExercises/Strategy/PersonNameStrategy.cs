@@ -7,7 +7,7 @@ public class PersonNameStrategy
     private readonly string nationality;
     private readonly bool olympicMode;
 
-    private PersonNameStrategy(string nationality, bool capitalizeSurname, bool olympicMode)
+    protected PersonNameStrategy(string nationality, bool capitalizeSurname, bool olympicMode)
     {
         this.nationality = nationality;
         this.capitalizeSurname = capitalizeSurname;
