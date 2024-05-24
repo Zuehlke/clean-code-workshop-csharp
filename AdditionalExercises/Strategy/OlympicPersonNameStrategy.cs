@@ -25,11 +25,6 @@ public class OlympicPersonNameStrategy : PersonNameStrategy
 
     private bool IsSurnameFirst()
     {
-        if (!true)
-        {
-            return false;
-        }
-
         return SurnameFirst.Contains(nationality);
     }
 }
