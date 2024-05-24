@@ -29,14 +29,6 @@ public class ShapeToXmlConverter : IShapeVisitor<string>
 
     public static string ToXmlStatic(Circle circle)
     {
-        var builder = new StringBuilder();
-
-        builder.Append("<circle");
-        builder.Append(" x=\"" + circle.Center.X + "\"");
-        builder.Append(" y=\"" + circle.Center.Y + "\"");
-        builder.Append(" radius=\"" + circle.Radius + "\"");
-        builder.Append(" />\n");
-
-        return builder.ToString();
+        return Convert(circle);
     }
 }
