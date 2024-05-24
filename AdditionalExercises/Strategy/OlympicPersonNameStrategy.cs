@@ -2,8 +2,8 @@ namespace AdditionalExercises.Strategy;
 
 public class OlympicPersonNameStrategy : PersonNameStrategy
 {
-    public OlympicPersonNameStrategy(string nationality, bool capitalizeSurname, bool olympicMode)
-        : base(nationality, capitalizeSurname, olympicMode)
+    public OlympicPersonNameStrategy(string nationality, bool capitalizeSurname)
+        : base(nationality, capitalizeSurname)
     {
     }
 
