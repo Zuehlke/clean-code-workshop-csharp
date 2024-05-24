@@ -25,22 +25,6 @@ public class Person
 
     public override string ToString()
     {
-        return NameString(givenName, familyName);
-    }
-
-    private string NameString(string givenName, string familyName)
-    {
-        var surname = familyName;
-        if (personNameStrategy.capitalizeSurname)
-        {
-            surname = familyName.ToUpperInvariant();
-        }
-
-        if (personNameStrategy.IsSurnameFirst())
-        {
-            return surname + " " + givenName;
-        }
-
-        return givenName + " " + surname;
+        return personNameStrategy.NameString(givenName, familyName);
     }
 }

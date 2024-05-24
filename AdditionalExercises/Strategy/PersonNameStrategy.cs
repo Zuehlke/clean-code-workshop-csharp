@@ -23,4 +23,20 @@ public class PersonNameStrategy
 
         return SurnameFirst.Contains(nationality);
     }
+
+    public string NameString(string givenName, string familyName)
+    {
+        var surname = familyName;
+        if (capitalizeSurname)
+        {
+            surname = familyName.ToUpperInvariant();
+        }
+
+        if (IsSurnameFirst())
+        {
+            return surname + " " + givenName;
+        }
+
+        return givenName + " " + surname;
+    }
 }
