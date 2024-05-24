@@ -40,7 +40,7 @@ public class CircleTest
     [Test]
     public void ToXml()
     {
-        var xml = circle.ToXml();
+        var xml = ShapeToXmlConverter.Convert(circle);
         Assert.That(xml, Is.EqualTo("<circle x=\"0\" y=\"0\" radius=\"1\" />\n"));
     }
 

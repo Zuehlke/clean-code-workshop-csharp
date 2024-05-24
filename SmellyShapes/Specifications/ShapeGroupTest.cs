@@ -12,7 +12,7 @@ public class ShapeGroupTest
         var shapeGroup = new ShapeGroup();
         shapeGroup.Add(new Rectangle(new Point(0, 0), 2, 1));
 
-        var xml = shapeGroup.ToXml();
+        var xml = ShapeToXmlConverter.Convert(shapeGroup);
 
         Assert.That(
             xml,
