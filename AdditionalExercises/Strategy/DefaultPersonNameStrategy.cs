@@ -25,11 +25,6 @@ public class DefaultPersonNameStrategy : PersonNameStrategy
 
     private bool IsSurnameFirst()
     {
-        if (!false)
-        {
-            return false;
-        }
-
-        return SurnameFirst.Contains(nationality);
+        return false;
     }
 }
