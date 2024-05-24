@@ -40,4 +40,9 @@ public class ShapeToXmlConverter : IShapeVisitor<string>
 
         return builder.ToString();
     }
+
+    public string Visit(ShapeGroup shapeGroup)
+    {
+        throw new NotImplementedException();
+    }
 }

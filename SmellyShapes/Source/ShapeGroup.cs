@@ -86,7 +86,7 @@ public class ShapeGroup : Shape
 
     public override T Accept<T>(IShapeVisitor<T> shapeVisitor)
     {
-        throw new NotImplementedException();
+        return shapeVisitor.Visit(this);
     }
 
     private void AddToShapes(Shape shape)
