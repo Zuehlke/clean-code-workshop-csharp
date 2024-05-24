@@ -71,14 +71,6 @@ public class ShapeToXmlConverter : IShapeVisitor<string>
 
     public static string ToXmlStatic(Square square)
     {
-        var builder = new StringBuilder();
-
-        builder.Append("<square");
-        builder.Append(" x=\"" + square.X + "\"");
-        builder.Append(" y=\"" + square.Y + "\"");
-        builder.Append(" edgeLength=\"" + square.Width + "\"");
-        builder.Append(" />\n");
-
-        return builder.ToString();
+        return Convert(square);
     }
 }
