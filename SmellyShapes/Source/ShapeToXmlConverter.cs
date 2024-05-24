@@ -29,7 +29,7 @@ public class ShapeToXmlConverter : IShapeVisitor<string>
 
     public string Visit(Rectangle rectangle)
     {
-        throw new NotImplementedException();
+        return ToXmlStatic(rectangle);
     }
 
     public static string ToXmlStatic(Rectangle rectangle)
