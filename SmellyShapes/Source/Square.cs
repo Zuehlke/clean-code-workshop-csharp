@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace SmellyShapes.Source;
 
 public class Square : Rectangle
@@ -35,20 +33,7 @@ public class Square : Rectangle
 
     public override string ToXml()
     {
-        return ToXmlStatic(this);
-    }
-
-    private static string ToXmlStatic(Square square)
-    {
-        var builder = new StringBuilder();
-
-        builder.Append("<square");
-        builder.Append(" x=\"" + square.X + "\"");
-        builder.Append(" y=\"" + square.Y + "\"");
-        builder.Append(" edgeLength=\"" + square.Width + "\"");
-        builder.Append(" />\n");
-
-        return builder.ToString();
+        return ShapeToXmlConverter.ToXmlStatic(this);
     }
 
     public override T Accept<T>(IShapeVisitor<T> shapeVisitor)
