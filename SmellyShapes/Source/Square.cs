@@ -35,17 +35,17 @@ public class Square : Rectangle
 
     public override string ToXml()
     {
-        return ToXmlStatic();
+        return ToXmlStatic(this);
     }
 
-    private string ToXmlStatic()
+    private static string ToXmlStatic(Square square)
     {
         var builder = new StringBuilder();
 
         builder.Append("<square");
-        builder.Append(" x=\"" + X + "\"");
-        builder.Append(" y=\"" + Y + "\"");
-        builder.Append(" edgeLength=\"" + Width + "\"");
+        builder.Append(" x=\"" + square.X + "\"");
+        builder.Append(" y=\"" + square.Y + "\"");
+        builder.Append(" edgeLength=\"" + square.Width + "\"");
         builder.Append(" />\n");
 
         return builder.ToString();
