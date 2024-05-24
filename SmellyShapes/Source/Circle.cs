@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace SmellyShapes.Source;
 
 public class Circle : Shape
@@ -56,20 +54,7 @@ public class Circle : Shape
 
     public override string ToXml()
     {
-        return ToXmlStatic(this);
-    }
-
-    private static string ToXmlStatic(Circle circle)
-    {
-        var builder = new StringBuilder();
-
-        builder.Append("<circle");
-        builder.Append(" x=\"" + circle.Center.X + "\"");
-        builder.Append(" y=\"" + circle.Center.Y + "\"");
-        builder.Append(" radius=\"" + circle.Radius + "\"");
-        builder.Append(" />\n");
-
-        return builder.ToString();
+        return ShapeToXmlConverter.ToXmlStatic(this);
     }
 
     public override T Accept<T>(IShapeVisitor<T> shapeVisitor)
