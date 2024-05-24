@@ -7,10 +7,6 @@ public class PersonNameStrategy
     public readonly string nationality;
     public readonly bool olympicMode;
 
-    public PersonNameStrategy()
-    {
-    }
-
     public PersonNameStrategy(string nationality, bool capitalizeSurname, bool olympicMode)
     {
         this.nationality = nationality;

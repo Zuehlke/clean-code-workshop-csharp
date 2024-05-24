@@ -9,7 +9,6 @@ public class Person
     public Person(string familyName, string givenName, string nationality)
         : this(familyName, givenName, nationality, false, false)
     {
-        personNameStrategy = new PersonNameStrategy();
     }
 
     public Person(
