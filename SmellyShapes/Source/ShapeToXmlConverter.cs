@@ -6,7 +6,7 @@ public class ShapeToXmlConverter : IShapeVisitor<string>
 {
     public string Visit(Circle circle)
     {
-        throw new NotImplementedException();
+        return ToXmlStatic(circle);
     }
 
     public static string ToXmlStatic(Circle circle)
