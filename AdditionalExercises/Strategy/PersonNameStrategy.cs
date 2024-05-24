@@ -2,26 +2,16 @@ namespace AdditionalExercises.Strategy;
 
 public class PersonNameStrategy
 {
-    public static readonly List<string> SurnameFirst = ["CHN", "KOR"];
-    public readonly bool capitalizeSurname;
-    public readonly string nationality;
-    public readonly bool olympicMode;
+    private static readonly List<string> SurnameFirst = ["CHN", "KOR"];
+    private readonly bool capitalizeSurname;
+    private readonly string nationality;
+    private readonly bool olympicMode;
 
     public PersonNameStrategy(string nationality, bool capitalizeSurname, bool olympicMode)
     {
         this.nationality = nationality;
         this.capitalizeSurname = capitalizeSurname;
         this.olympicMode = olympicMode;
-    }
-
-    public bool IsSurnameFirst()
-    {
-        if (!olympicMode)
-        {
-            return false;
-        }
-
-        return SurnameFirst.Contains(nationality);
     }
 
     public string NameString(string givenName, string familyName)
@@ -38,5 +28,15 @@ public class PersonNameStrategy
         }
 
         return givenName + " " + surname;
+    }
+
+    private bool IsSurnameFirst()
+    {
+        if (!olympicMode)
+        {
+            return false;
+        }
+
+        return SurnameFirst.Contains(nationality);
     }
 }
