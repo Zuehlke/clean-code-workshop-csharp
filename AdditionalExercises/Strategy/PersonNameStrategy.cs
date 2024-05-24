@@ -2,10 +2,10 @@ namespace AdditionalExercises.Strategy;
 
 public abstract class PersonNameStrategy
 {
-    private static readonly List<string> SurnameFirst = ["CHN", "KOR"];
-    private readonly bool capitalizeSurname;
-    private readonly string nationality;
-    private readonly bool olympicMode;
+    protected static readonly List<string> SurnameFirst = ["CHN", "KOR"];
+    protected readonly bool capitalizeSurname;
+    protected readonly string nationality;
+    protected readonly bool olympicMode;
 
     protected PersonNameStrategy(string nationality, bool capitalizeSurname, bool olympicMode)
     {
@@ -21,29 +21,5 @@ public abstract class PersonNameStrategy
             : new DefaultPersonNameStrategy(nationality, capitalizeSurname, false);
     }
 
-    public string NameString(string givenName, string familyName)
-    {
-        var surname = familyName;
-        if (capitalizeSurname)
-        {
-            surname = familyName.ToUpperInvariant();
-        }
-
-        if (IsSurnameFirst())
-        {
-            return surname + " " + givenName;
-        }
-
-        return givenName + " " + surname;
-    }
-
-    private bool IsSurnameFirst()
-    {
-        if (!olympicMode)
-        {
-            return false;
-        }
-
-        return SurnameFirst.Contains(nationality);
-    }
+    public abstract string NameString(string givenName, string familyName);
 }

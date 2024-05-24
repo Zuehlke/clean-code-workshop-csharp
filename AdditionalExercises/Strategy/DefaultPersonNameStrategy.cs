@@ -6,4 +6,30 @@ public class DefaultPersonNameStrategy : PersonNameStrategy
         : base(nationality, capitalizeSurname, olympicMode)
     {
     }
+
+    public override string NameString(string givenName, string familyName)
+    {
+        var surname = familyName;
+        if (capitalizeSurname)
+        {
+            surname = familyName.ToUpperInvariant();
+        }
+
+        if (IsSurnameFirst())
+        {
+            return surname + " " + givenName;
+        }
+
+        return givenName + " " + surname;
+    }
+
+    private bool IsSurnameFirst()
+    {
+        if (!olympicMode)
+        {
+            return false;
+        }
+
+        return SurnameFirst.Contains(nationality);
+    }
 }
