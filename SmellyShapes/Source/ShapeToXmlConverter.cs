@@ -48,7 +48,7 @@ public class ShapeToXmlConverter : IShapeVisitor<string>
         builder.Append("<shapegroup>\n");
         for (var i = 0; i < shapeGroup.Size; i++)
         {
-            builder.Append(ShapeToXmlConverter.Convert(shapeGroup.Shapes[i]));
+            builder.Append(Convert(shapeGroup.Shapes[i]));
         }
 
         builder.Append("</shapegroup>\n");
