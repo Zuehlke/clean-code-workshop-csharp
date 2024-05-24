@@ -19,4 +19,15 @@ public abstract class PersonNameStrategy
     }
 
     public abstract string NameString(string givenName, string familyName);
+
+    protected string GetSurname(string familyName)
+    {
+        var surname = familyName;
+        if (capitalizeSurname)
+        {
+            surname = familyName.ToUpperInvariant();
+        }
+
+        return surname;
+    }
 }

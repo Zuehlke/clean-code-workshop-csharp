@@ -13,15 +13,4 @@ public class DefaultPersonNameStrategy : PersonNameStrategy
 
         return givenName + " " + surname;
     }
-
-    private string GetSurname(string familyName)
-    {
-        var surname = familyName;
-        if (capitalizeSurname)
-        {
-            surname = familyName.ToUpperInvariant();
-        }
-
-        return surname;
-    }
 }
