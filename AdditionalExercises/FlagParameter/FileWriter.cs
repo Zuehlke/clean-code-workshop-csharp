@@ -1,55 +1,53 @@
-﻿namespace AdditionalExercises.FlagParameter
+﻿namespace AdditionalExercises.FlagParameter;
+
+/// <summary>
+///     Demonstration of Flag Parameters.
+/// </summary>
+public class FileWriter
 {
-    /// <summary>
-    /// Demonstration of Flag Parameters.
-    /// </summary>
-    public class FileWriter
+    private readonly bool isInAppendMode;
+    private bool isContentFlushed;
+
+    public FileWriter(string newContent, bool useAppendMode)
     {
-        private string content;
-        private readonly bool isInAppendMode;
-        private bool isContentFlushed;
+        Content = newContent;
+        isInAppendMode = useAppendMode;
+        isContentFlushed = false;
+    }
 
-        public FileWriter(string newContent, bool useAppendMode)
+    public string Content { get; private set; }
+
+    public void Write(string contentToWrite, bool doFlushContent)
+    {
+        isContentFlushed = false;
+
+        if (isInAppendMode)
         {
-            this.content = newContent;
-            this.isInAppendMode = useAppendMode;
-            this.isContentFlushed = false;
+            Content += contentToWrite;
+        }
+        else
+        {
+            Content = contentToWrite;
         }
 
-        public string Content => this.content;
-
-        public void Write(string contentToWrite, bool doFlushContent)
+        if (doFlushContent)
         {
-            this.isContentFlushed = false;
-
-            if (this.isInAppendMode)
-            {
-                this.content += contentToWrite;
-            }
-            else
-            {
-                this.content = contentToWrite;
-            }
-
-            if (doFlushContent)
-            {
-                this.FlushContent();
-            }
+            FlushContent();
         }
+    }
 
-        public void FlushContent()
-        {
-            this.isContentFlushed = true;
-        }
+    public void FlushContent()
+    {
+        isContentFlushed = true;
+    }
 
-        public bool IsInAppendMode()
-        {
-            return this.isInAppendMode;
-        }
+    public bool IsInAppendMode()
+    {
+        return isInAppendMode;
+    }
 
-        public bool IsContentFlushed()
-        {
-            return this.isContentFlushed;
-        }
+    public bool IsContentFlushed()
+    {
+        return isContentFlushed;
     }
 }

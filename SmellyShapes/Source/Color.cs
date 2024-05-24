@@ -1,61 +1,67 @@
-namespace SmellyShapes.Source
+namespace SmellyShapes.Source;
+
+public class Color
 {
-    public class Color
+    private readonly string colorAsText;
+
+    public Color(string colorAsText)
     {
-        private readonly string colorAsText;
+        this.colorAsText = colorAsText;
+        ConvertTextValueToRgbAndHex();
+    }
 
-        public string ColorAsHex { get; private set; }
-        public string ColorAsRgbBlue { get; private set; }
-        public string ColorAsRgbGreen { get; private set; }
-        public string ColorAsRgbRed { get; private set; }
-        public string ErrorMessage { get; private set; }
+    public string ColorAsHex { get; private set; }
 
-        public Color(string colorAsText)
+    public string ColorAsRgbBlue { get; private set; }
+
+    public string ColorAsRgbGreen { get; private set; }
+
+    public string ColorAsRgbRed { get; private set; }
+
+    public string ErrorMessage { get; private set; }
+
+    public string GetColorFormatted(bool includeHexAndRgb)
+    {
+        if (includeHexAndRgb)
         {
-            this.colorAsText = colorAsText;
-            ConvertTextValueToRgbAndHex();
+            return colorAsText + " " + ColorAsHex + " " + ColorAsRgbRed + ":" + ColorAsRgbGreen + ":" +
+                   ColorAsRgbBlue;
         }
 
-        public string GetColorFormatted(bool includeHexAndRgb)
+        return colorAsText;
+    }
+
+    private void ConvertTextValueToRgbAndHex()
+    {
+        ErrorMessage = string.Empty;
+
+        // set to Red
+        if (colorAsText == "Red")
         {
-            if (includeHexAndRgb)
-                return colorAsText + " " + ColorAsHex + " " + ColorAsRgbRed + ":" + ColorAsRgbGreen + ":" +
-                       ColorAsRgbBlue;
-            return colorAsText;
+            ColorAsRgbRed = "255";
+            ColorAsRgbBlue = "0";
+            ColorAsRgbGreen = "0";
+            ColorAsHex = "#FF0000";
         }
-
-        private void ConvertTextValueToRgbAndHex()
+        else if (colorAsText == "Blue")
         {
-            ErrorMessage = string.Empty;
-
-            // set to Red
-            if (colorAsText == "Red")
-            {
-                ColorAsRgbRed = "255";
-                ColorAsRgbBlue = "0";
-                ColorAsRgbGreen = "0";
-                ColorAsHex = "#FF0000";
-            }
-            else if (colorAsText == "Blue")
-            {
-                // set to Blue
-                ColorAsRgbRed = "0";
-                ColorAsRgbBlue = "255";
-                ColorAsRgbGreen = "0";
-                ColorAsHex = "#00FF00";
-            }
-            else if (colorAsText == "Green")
-            {
-                // set to Green
-                ColorAsRgbRed = "0";
-                ColorAsRgbBlue = "0";
-                ColorAsRgbGreen = "255";
-                ColorAsHex = "#0000FF";
-            }
-            else
-            {
-                ErrorMessage = "Color not recognized";
-            }
+            // set to Blue
+            ColorAsRgbRed = "0";
+            ColorAsRgbBlue = "255";
+            ColorAsRgbGreen = "0";
+            ColorAsHex = "#00FF00";
+        }
+        else if (colorAsText == "Green")
+        {
+            // set to Green
+            ColorAsRgbRed = "0";
+            ColorAsRgbBlue = "0";
+            ColorAsRgbGreen = "255";
+            ColorAsHex = "#0000FF";
+        }
+        else
+        {
+            ErrorMessage = "Color not recognized";
         }
     }
 }

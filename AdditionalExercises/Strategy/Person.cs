@@ -1,57 +1,61 @@
-﻿namespace AdditionalExercises.Strategy
+﻿namespace AdditionalExercises.Strategy;
+
+public class Person
 {
-    using System;
-    using System.Collections.Generic;
+    private static readonly List<string> SurnameFirst = ["CHN", "KOR"];
+    private readonly bool capitalizeSurname;
+    private readonly string familyName;
+    private readonly string givenName;
+    private readonly string nationality;
+    private readonly bool olympicMode;
 
-    public class Person
+    public Person(string familyName, string givenName, string nationality)
+        : this(familyName, givenName, nationality, false, false)
     {
-        private String familyName;
-        private String givenName;
-        private String nationality;
-        private bool capitalizeSurname;
-        private bool olympicMode;
+    }
 
-        private static List<String> SurnameFirst = ["CHN", "KOR"];
+    public Person(
+        string familyName,
+        string givenName,
+        string nationality,
+        bool olympicMode,
+        bool capitalizeSurname)
+    {
+        this.familyName = familyName;
+        this.givenName = givenName;
+        this.nationality = nationality;
+        this.capitalizeSurname = capitalizeSurname;
+        this.olympicMode = olympicMode;
+    }
 
+    public override string ToString()
+    {
+        return NameString();
+    }
 
-        public Person(String familyName, String givenName, String nationality)
-            : this(familyName, givenName, nationality, false, false)
+    private string NameString()
+    {
+        var surname = familyName;
+        if (capitalizeSurname)
         {
+            surname = familyName.ToUpperInvariant();
         }
 
-        public Person(String familyName, String givenName, String nationality,
-            bool olympicMode, bool capitalizeSurname)
+        if (IsSurnameFirst())
         {
-            this.familyName = familyName;
-            this.givenName = givenName;
-            this.nationality = nationality;
-            this.capitalizeSurname = capitalizeSurname;
-            this.olympicMode = olympicMode;
+            return surname + " " + givenName;
         }
 
-        public override string ToString()
+        return givenName + " " + surname;
+    }
+
+    private bool IsSurnameFirst()
+    {
+        if (!olympicMode)
         {
-            return NameString();
+            return false;
         }
 
-        private String NameString()
-        {
-            String surname = familyName;
-            if (capitalizeSurname)
-            {
-                surname = familyName.ToUpperInvariant();
-            }
-            if (IsSurnameFirst())
-                return surname + " " + givenName;
-
-            return givenName + " " + surname;
-        }
-
-        private bool IsSurnameFirst()
-        {
-            if (!olympicMode)
-                return false;
-            return SurnameFirst.Contains(nationality);
-        }
+        return SurnameFirst.Contains(nationality);
     }
 }

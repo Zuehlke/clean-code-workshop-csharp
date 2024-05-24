@@ -1,54 +1,73 @@
-namespace SmellyShapes.Source
+namespace SmellyShapes.Source;
+
+public class ShapeGroup : ComplexShape
 {
-    public class ShapeGroup : ComplexShape
+    public IShape[] Shapes = new IShape[10];
+
+    public int Size;
+
+    public ShapeGroup()
     {
-        public IShape[] Shapes = new IShape[10];
+    }
 
-        public int Size;
+    public ShapeGroup(IShape[] shapes, bool readOnly)
+    {
+        Shapes = shapes;
+        Size = shapes.Length;
+        ReadOnly = readOnly;
+    }
 
-        public ShapeGroup()
+    public void Add(IShape shape)
+    {
+        if (!ReadOnly)
         {
-        }
-
-        public ShapeGroup(IShape[] shapes, bool readOnly)
-        {
-            this.Shapes = shapes;
-            Size = shapes.Length;
-            ReadOnly = readOnly;
-        }
-
-        public void Add(IShape shape)
-        {
-            if (!ReadOnly)
+            var newSize = Size + 1;
+            if (newSize > Shapes.Length)
             {
-                var newSize = Size + 1;
-                if (newSize > Shapes.Length)
+                var newShapes = new IShape[Shapes.Length + 10];
+                for (var i = 0; i < Size; i++)
                 {
-                    var newShapes = new IShape[Shapes.Length + 10];
-                    for (var i = 0; i < Size; i++) newShapes[i] = Shapes[i];
-                    Shapes = newShapes;
+                    newShapes[i] = Shapes[i];
                 }
 
-                if (Contains(shape)) return;
-                Shapes[Size++] = shape;
+                Shapes = newShapes;
+            }
+
+            if (Contains(shape))
+            {
+                return;
+            }
+
+            Shapes[Size++] = shape;
+        }
+    }
+
+    public bool Contains(IShape shape)
+    {
+        for (var i = 0; i < Size; i++)
+        {
+            if (Shapes[i].Equals(shape))
+            {
+                return true;
             }
         }
 
-        public bool Contains(IShape shape)
+        return false;
+    }
+
+    public override bool Contains(int x, int y)
+    {
+        foreach (var shape in Shapes)
         {
-            for (var i = 0; i < Size; i++)
-                if (Shapes[i].Equals(shape))
+            if (shape != null)
+            {
+                if (shape.Contains(x, y))
+                {
                     return true;
-            return false;
+                }
+            }
         }
 
-        public override bool Contains(int x, int y)
-        {
-            foreach (var shape in Shapes)
-                if (shape != null)
-                    if (shape.Contains(x, y))
-                        return true;
-            return false;
-        }
+        return false;
     }
 }
