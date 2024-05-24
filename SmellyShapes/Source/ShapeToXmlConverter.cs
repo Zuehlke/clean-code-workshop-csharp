@@ -55,9 +55,4 @@ public class ShapeToXmlConverter : IShapeVisitor<string>
 
         return builder.ToString();
     }
-
-    public static string ToXmlStatic(ShapeGroup shapeGroup)
-    {
-        return Convert(shapeGroup);
-    }
 }
