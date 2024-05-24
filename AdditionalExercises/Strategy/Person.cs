@@ -20,7 +20,7 @@ public class Person
     {
         this.familyName = familyName;
         this.givenName = givenName;
-        personNameStrategy = new PersonNameStrategy(nationality, capitalizeSurname, olympicMode);
+        personNameStrategy = PersonNameStrategy.Create(nationality, capitalizeSurname, olympicMode);
     }
 
     public override string ToString()

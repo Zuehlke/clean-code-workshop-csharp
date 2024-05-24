@@ -7,11 +7,16 @@ public class PersonNameStrategy
     private readonly string nationality;
     private readonly bool olympicMode;
 
-    public PersonNameStrategy(string nationality, bool capitalizeSurname, bool olympicMode)
+    private PersonNameStrategy(string nationality, bool capitalizeSurname, bool olympicMode)
     {
         this.nationality = nationality;
         this.capitalizeSurname = capitalizeSurname;
         this.olympicMode = olympicMode;
+    }
+
+    public static PersonNameStrategy Create(string nationality, bool capitalizeSurname, bool olympicMode)
+    {
+        return new PersonNameStrategy(nationality, capitalizeSurname, olympicMode);
     }
 
     public string NameString(string givenName, string familyName)
