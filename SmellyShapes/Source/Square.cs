@@ -35,6 +35,11 @@ public class Square : Rectangle
 
     public override string ToXml()
     {
+        return ToXmlStatic();
+    }
+
+    private string ToXmlStatic()
+    {
         var builder = new StringBuilder();
 
         builder.Append("<square");
