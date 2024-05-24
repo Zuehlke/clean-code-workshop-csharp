@@ -9,8 +9,6 @@ public class DefaultPersonNameStrategy : PersonNameStrategy
 
     public override string NameString(string givenName, string familyName)
     {
-        var surname = GetSurname(familyName);
-
-        return givenName + " " + surname;
+        return givenName + " " + GetSurname(familyName);
     }
 }
