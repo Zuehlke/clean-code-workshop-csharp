@@ -3,11 +3,9 @@ namespace AdditionalExercises.Strategy;
 public abstract class PersonNameStrategy
 {
     protected readonly bool capitalizeSurname;
-    protected readonly string nationality;
 
     protected PersonNameStrategy(string nationality, bool capitalizeSurname)
     {
-        this.nationality = nationality;
         this.capitalizeSurname = capitalizeSurname;
     }
 
