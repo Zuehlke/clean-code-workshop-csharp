@@ -36,21 +36,11 @@ public class Person
             surname = familyName.ToUpperInvariant();
         }
 
-        if (IsSurnameFirst())
+        if (personNameStrategy.IsSurnameFirst())
         {
             return surname + " " + givenName;
         }
 
         return givenName + " " + surname;
-    }
-
-    private bool IsSurnameFirst()
-    {
-        if (!personNameStrategy.olympicMode)
-        {
-            return false;
-        }
-
-        return PersonNameStrategy.SurnameFirst.Contains(personNameStrategy.nationality);
     }
 }

@@ -13,4 +13,14 @@ public class PersonNameStrategy
         this.capitalizeSurname = capitalizeSurname;
         this.olympicMode = olympicMode;
     }
+
+    public bool IsSurnameFirst()
+    {
+        if (!olympicMode)
+        {
+            return false;
+        }
+
+        return SurnameFirst.Contains(nationality);
+    }
 }
