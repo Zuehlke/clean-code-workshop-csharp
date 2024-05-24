@@ -2,16 +2,14 @@
 
 public class Person
 {
-    private static readonly List<string> SurnameFirst = ["CHN", "KOR"];
-    private readonly bool capitalizeSurname;
     private readonly string familyName;
     private readonly string givenName;
-    private readonly string nationality;
-    private readonly bool olympicMode;
+    private readonly PersonNameStrategy personNameStrategy;
 
     public Person(string familyName, string givenName, string nationality)
         : this(familyName, givenName, nationality, false, false)
     {
+        personNameStrategy = new PersonNameStrategy();
     }
 
     public Person(
@@ -23,9 +21,7 @@ public class Person
     {
         this.familyName = familyName;
         this.givenName = givenName;
-        this.nationality = nationality;
-        this.capitalizeSurname = capitalizeSurname;
-        this.olympicMode = olympicMode;
+        personNameStrategy = new PersonNameStrategy(nationality, capitalizeSurname, olympicMode);
     }
 
     public override string ToString()
@@ -36,7 +32,7 @@ public class Person
     private string NameString()
     {
         var surname = familyName;
-        if (capitalizeSurname)
+        if (personNameStrategy.capitalizeSurname)
         {
             surname = familyName.ToUpperInvariant();
         }
@@ -51,11 +47,11 @@ public class Person
 
     private bool IsSurnameFirst()
     {
-        if (!olympicMode)
+        if (!personNameStrategy.olympicMode)
         {
             return false;
         }
 
-        return SurnameFirst.Contains(nationality);
+        return PersonNameStrategy.SurnameFirst.Contains(personNameStrategy.nationality);
     }
 }
