@@ -4,7 +4,7 @@ public abstract class PersonNameStrategy
 {
     protected readonly bool capitalizeSurname;
 
-    protected PersonNameStrategy(string nationality, bool capitalizeSurname)
+    protected PersonNameStrategy(bool capitalizeSurname)
     {
         this.capitalizeSurname = capitalizeSurname;
     }
@@ -13,7 +13,7 @@ public abstract class PersonNameStrategy
     {
         return olympicMode
             ? new OlympicPersonNameStrategy(nationality, capitalizeSurname)
-            : new DefaultPersonNameStrategy(nationality, capitalizeSurname);
+            : new DefaultPersonNameStrategy(capitalizeSurname);
     }
 
     public abstract string NameString(string givenName, string familyName);

@@ -6,7 +6,7 @@ public class OlympicPersonNameStrategy : PersonNameStrategy
     protected readonly string nationality;
 
     public OlympicPersonNameStrategy(string nationality, bool capitalizeSurname)
-        : base(nationality, capitalizeSurname)
+        : base(capitalizeSurname)
     {
         this.nationality = nationality;
     }
