@@ -18,6 +18,8 @@ public class ShapeGroup : Shape
 
     public int Size => shapes.Count;
 
+    public List<Shape> Shapes => shapes;
+
     protected bool ReadOnly { get; set; }
 
     public static ShapeGroup CreateReadOnlyShapeGroup(Shape[] shapes)
