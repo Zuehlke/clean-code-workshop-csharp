@@ -4,13 +4,13 @@ namespace SmellyShapes.Source;
 
 public class Circle : Shape
 {
-    private readonly Point center;
-
     public Circle(Point center, int radius)
     {
-        this.center = center;
+        Center = center;
         Radius = radius;
     }
+
+    public Point Center { get; }
 
     public Color Color { get; set; } = new("Green");
 
@@ -18,8 +18,8 @@ public class Circle : Shape
 
     public override bool Contains(Point point)
     {
-        var deltaX = point.X - center.X;
-        var deltaY = point.Y - center.Y;
+        var deltaX = point.X - Center.X;
+        var deltaY = point.Y - Center.Y;
         var result = Square(deltaX) + Square(deltaY) <= Square(Radius);
 
         return result;
@@ -30,9 +30,9 @@ public class Circle : Shape
         var numberOfContainingPoints = 0;
         for (var i = 0; i < xCords.Length; ++i)
         {
-            var deltaX = xCords[i] - center.X;
+            var deltaX = xCords[i] - Center.X;
 
-            var deltaY = yCords[i] - center.Y;
+            var deltaY = yCords[i] - Center.Y;
             var result = Square(deltaX) + Square(deltaY) <= Square(Radius);
 
             // Increase number of Points?
@@ -47,7 +47,7 @@ public class Circle : Shape
 
     public override string ToString()
     {
-        var centerString = center.ToString();
+        var centerString = Center.ToString();
         var colorString = Color.ToString();
 
         return "Circle: (" + centerString + ") radius= " + Radius
@@ -59,8 +59,8 @@ public class Circle : Shape
         var builder = new StringBuilder();
 
         builder.Append("<circle");
-        builder.Append(" x=\"" + center.X + "\"");
-        builder.Append(" y=\"" + center.Y + "\"");
+        builder.Append(" x=\"" + Center.X + "\"");
+        builder.Append(" y=\"" + Center.Y + "\"");
         builder.Append(" radius=\"" + Radius + "\"");
         builder.Append(" />\n");
 
