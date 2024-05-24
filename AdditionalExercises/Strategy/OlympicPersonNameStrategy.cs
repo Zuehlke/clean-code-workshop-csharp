@@ -11,11 +11,7 @@ public class OlympicPersonNameStrategy : PersonNameStrategy
 
     public override string NameString(string givenName, string familyName)
     {
-        var surname = familyName;
-        if (capitalizeSurname)
-        {
-            surname = familyName.ToUpperInvariant();
-        }
+        var surname = GetSurname(familyName);
 
         if (SurnameFirst.Contains(nationality))
         {
@@ -23,5 +19,16 @@ public class OlympicPersonNameStrategy : PersonNameStrategy
         }
 
         return givenName + " " + surname;
+    }
+
+    private string GetSurname(string familyName)
+    {
+        var surname = familyName;
+        if (capitalizeSurname)
+        {
+            surname = familyName.ToUpperInvariant();
+        }
+
+        return surname;
     }
 }

@@ -9,12 +9,19 @@ public class DefaultPersonNameStrategy : PersonNameStrategy
 
     public override string NameString(string givenName, string familyName)
     {
+        var surname = GetSurname(familyName);
+
+        return givenName + " " + surname;
+    }
+
+    private string GetSurname(string familyName)
+    {
         var surname = familyName;
         if (capitalizeSurname)
         {
             surname = familyName.ToUpperInvariant();
         }
 
-        return givenName + " " + surname;
+        return surname;
     }
 }
