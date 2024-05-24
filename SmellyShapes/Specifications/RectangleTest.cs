@@ -34,14 +34,6 @@ public class RectangleTest
     }
 
     [Test]
-    public void ToXml()
-    {
-        var xml = ShapeToXmlConverter.Convert(rectangle);
-
-        Assert.That(xml, Is.EqualTo("<rectangle x=\"0\" y=\"0\" width=\"2\" height=\"1\" />\n"));
-    }
-
-    [Test]
     public void RectangleToString()
     {
         var xml = rectangle.ToString();

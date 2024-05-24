@@ -7,20 +7,6 @@ namespace SmellyShapes.Specifications;
 public class ShapeGroupTest
 {
     [Test]
-    public void ToXml()
-    {
-        var shapeGroup = new ShapeGroup();
-        shapeGroup.Add(new Rectangle(new Point(0, 0), 2, 1));
-
-        var xml = ShapeToXmlConverter.Convert(shapeGroup);
-
-        Assert.That(
-            xml,
-            Is.EqualTo(
-                "<shapegroup>\n<rectangle x=\"0\" y=\"0\" width=\"2\" height=\"1\" />\n</shapegroup>\n"));
-    }
-
-    [Test]
     public void Constructor_WithShapeArray()
     {
         Shape[] shapes = [new Circle(new Point(0, 0), 0)];

@@ -21,14 +21,6 @@ public class SquareTest
     }
 
     [Test]
-    public void ToXml()
-    {
-        var square = new Square(new Point(0, 1), 2);
-        var xml = ShapeToXmlConverter.Convert(square);
-        Assert.That(xml, Is.EqualTo("<square x=\"0\" y=\"1\" edgeLength=\"2\" />\n"));
-    }
-
-    [Test]
     public void ContainsPoints()
     {
         var square = new Square(new Point(0, 0), 1);

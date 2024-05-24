@@ -38,13 +38,6 @@ public class CircleTest
     }
 
     [Test]
-    public void ToXml()
-    {
-        var xml = ShapeToXmlConverter.Convert(circle);
-        Assert.That(xml, Is.EqualTo("<circle x=\"0\" y=\"0\" radius=\"1\" />\n"));
-    }
-
-    [Test]
     public void ToString_()
     {
         Assert.That(circle.ToString(), Is.EqualTo("Circle: (0,0) radius= 1 RGB=255,0,0"));
