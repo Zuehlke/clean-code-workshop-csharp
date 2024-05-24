@@ -38,11 +38,6 @@ public class Rectangle : Shape
             $"Rectangle: ({X},{Y}) width={Width} height={height} color={C.ColorAsHex}";
     }
 
-    public override string ToXml()
-    {
-        return ShapeToXmlConverter.Convert(this);
-    }
-
     public override T Accept<T>(IShapeVisitor<T> shapeVisitor)
     {
         return shapeVisitor.Visit(this);

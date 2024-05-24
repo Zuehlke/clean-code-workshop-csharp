@@ -52,11 +52,6 @@ public class Circle : Shape
                + " " + colorString;
     }
 
-    public override string ToXml()
-    {
-        return ShapeToXmlConverter.Convert(this);
-    }
-
     public override T Accept<T>(IShapeVisitor<T> shapeVisitor)
     {
         return shapeVisitor.Visit(this);
