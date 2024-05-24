@@ -69,7 +69,7 @@ public class Circle : Shape
 
     public override T Accept<T>(IShapeVisitor<T> shapeVisitor)
     {
-        throw new NotImplementedException();
+        return shapeVisitor.Visit(this);
     }
 
     private static int Square(int i)
