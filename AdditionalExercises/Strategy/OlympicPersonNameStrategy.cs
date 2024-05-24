@@ -15,16 +15,11 @@ public class OlympicPersonNameStrategy : PersonNameStrategy
             surname = familyName.ToUpperInvariant();
         }
 
-        if (IsSurnameFirst())
+        if (SurnameFirst.Contains(nationality))
         {
             return surname + " " + givenName;
         }
 
         return givenName + " " + surname;
-    }
-
-    private bool IsSurnameFirst()
-    {
-        return SurnameFirst.Contains(nationality);
     }
 }
