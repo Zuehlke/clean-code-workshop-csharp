@@ -43,15 +43,6 @@ public class ShapeToXmlConverter : IShapeVisitor<string>
 
     public static string ToXmlStatic(Rectangle rectangle)
     {
-        var builder = new StringBuilder();
-
-        builder.Append("<rectangle");
-        builder.Append(" x=\"" + rectangle.X + "\"");
-        builder.Append(" y=\"" + rectangle.Y + "\"");
-        builder.Append(" width=\"" + rectangle.Width + "\"");
-        builder.Append(" height=\"" + rectangle.Height + "\"");
-        builder.Append(" />\n");
-
-        return builder.ToString();
+        return Convert(rectangle);
     }
 }
