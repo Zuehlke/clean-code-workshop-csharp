@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace SmellyShapes.Source;
 
 public class Rectangle : Shape
@@ -42,21 +40,7 @@ public class Rectangle : Shape
 
     public override string ToXml()
     {
-        return ToXmlStatic(this);
-    }
-
-    private static string ToXmlStatic(Rectangle rectangle)
-    {
-        var builder = new StringBuilder();
-
-        builder.Append("<rectangle");
-        builder.Append(" x=\"" + rectangle.X + "\"");
-        builder.Append(" y=\"" + rectangle.Y + "\"");
-        builder.Append(" width=\"" + rectangle.Width + "\"");
-        builder.Append(" height=\"" + rectangle.Height + "\"");
-        builder.Append(" />\n");
-
-        return builder.ToString();
+        return ShapeToXmlConverter.Convert(this);
     }
 
     public override T Accept<T>(IShapeVisitor<T> shapeVisitor)
