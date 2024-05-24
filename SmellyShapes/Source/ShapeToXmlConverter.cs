@@ -55,4 +55,9 @@ public class ShapeToXmlConverter : IShapeVisitor<string>
 
         return builder.ToString();
     }
+
+    public string Visit(Square square)
+    {
+        throw new NotImplementedException();
+    }
 }

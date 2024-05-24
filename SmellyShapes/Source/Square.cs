@@ -45,4 +45,9 @@ public class Square : Rectangle
 
         return builder.ToString();
     }
+
+    public override T Accept<T>(IShapeVisitor<T> shapeVisitor)
+    {
+        return shapeVisitor.Visit(this);
+    }
 }
