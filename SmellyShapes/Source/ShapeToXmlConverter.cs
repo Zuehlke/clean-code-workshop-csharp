@@ -58,16 +58,6 @@ public class ShapeToXmlConverter : IShapeVisitor<string>
 
     public static string ToXmlStatic(ShapeGroup shapeGroup)
     {
-        var builder = new StringBuilder();
-
-        builder.Append("<shapegroup>\n");
-        for (var i = 0; i < shapeGroup.Size; i++)
-        {
-            builder.Append(shapeGroup.Shapes[i].ToXml());
-        }
-
-        builder.Append("</shapegroup>\n");
-
-        return builder.ToString();
+        return Convert(shapeGroup);
     }
 }
