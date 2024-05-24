@@ -1,8 +1,8 @@
 namespace AdditionalExercises.Strategy;
 
-public class DefaultPersonNameStrategy : PersonNameStrategy
+internal sealed class DefaultPersonNameStrategy : PersonNameStrategy
 {
-    public DefaultPersonNameStrategy(bool capitalizeSurname)
+    internal DefaultPersonNameStrategy(bool capitalizeSurname)
         : base(capitalizeSurname)
     {
     }

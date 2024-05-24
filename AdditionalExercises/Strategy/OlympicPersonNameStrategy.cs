@@ -1,11 +1,11 @@
 namespace AdditionalExercises.Strategy;
 
-public class OlympicPersonNameStrategy : PersonNameStrategy
+internal sealed class OlympicPersonNameStrategy : PersonNameStrategy
 {
     private static readonly List<string> SurnameFirst = ["CHN", "KOR"];
     private readonly string nationality;
 
-    public OlympicPersonNameStrategy(string nationality, bool capitalizeSurname)
+    internal OlympicPersonNameStrategy(string nationality, bool capitalizeSurname)
         : base(capitalizeSurname)
     {
         this.nationality = nationality;
