@@ -15,11 +15,6 @@ public class DefaultPersonNameStrategy : PersonNameStrategy
             surname = familyName.ToUpperInvariant();
         }
 
-        if (false)
-        {
-            return surname + " " + givenName;
-        }
-
         return givenName + " " + surname;
     }
 }
