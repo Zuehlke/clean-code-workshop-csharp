@@ -27,8 +27,8 @@ public class ShapeToXmlConverter : IShapeVisitor<string>
         return builder.ToString();
     }
 
-    public static string ToXmlStatic(Circle circle)
+    public string Visit(Rectangle rectangle)
     {
-        return Convert(circle);
+        throw new NotImplementedException();
     }
 }

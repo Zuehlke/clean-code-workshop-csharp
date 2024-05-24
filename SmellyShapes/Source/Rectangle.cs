@@ -56,6 +56,6 @@ public class Rectangle : Shape
 
     public override T Accept<T>(IShapeVisitor<T> shapeVisitor)
     {
-        throw new NotImplementedException();
+        return shapeVisitor.Visit(this);
     }
 }
