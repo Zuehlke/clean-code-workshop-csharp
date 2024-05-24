@@ -56,17 +56,17 @@ public class Circle : Shape
 
     public override string ToXml()
     {
-        return ToXmlStatic();
+        return ToXmlStatic(this);
     }
 
-    private string ToXmlStatic()
+    private static string ToXmlStatic(Circle circle)
     {
         var builder = new StringBuilder();
 
         builder.Append("<circle");
-        builder.Append(" x=\"" + Center.X + "\"");
-        builder.Append(" y=\"" + Center.Y + "\"");
-        builder.Append(" radius=\"" + Radius + "\"");
+        builder.Append(" x=\"" + circle.Center.X + "\"");
+        builder.Append(" y=\"" + circle.Center.Y + "\"");
+        builder.Append(" radius=\"" + circle.Radius + "\"");
         builder.Append(" />\n");
 
         return builder.ToString();
