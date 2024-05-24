@@ -4,6 +4,16 @@ namespace SmellyShapes.Source;
 
 public class ShapeToXmlConverter : IShapeVisitor<string>
 {
+    private ShapeToXmlConverter()
+    {
+    }
+
+    public static string Convert(Shape shape)
+    {
+        var converter = new ShapeToXmlConverter();
+        return shape.Accept(converter);
+    }
+
     public string Visit(Circle circle)
     {
         var builder = new StringBuilder();
