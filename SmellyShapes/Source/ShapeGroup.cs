@@ -83,7 +83,7 @@ public class ShapeGroup : Shape
         builder.Append("<shapegroup>\n");
         for (var i = 0; i < shapeGroup.Size; i++)
         {
-            builder.Append(shapeGroup.shapes[i].ToXml());
+            builder.Append(shapeGroup.Shapes[i].ToXml());
         }
 
         builder.Append("</shapegroup>\n");
