@@ -2,7 +2,6 @@ namespace AdditionalExercises.Strategy;
 
 public abstract class PersonNameStrategy
 {
-    protected static readonly List<string> SurnameFirst = ["CHN", "KOR"];
     protected readonly bool capitalizeSurname;
     protected readonly string nationality;
 
