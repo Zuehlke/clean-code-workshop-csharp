@@ -42,18 +42,18 @@ public class Rectangle : Shape
 
     public override string ToXml()
     {
-        return ToXmlStatic();
+        return ToXmlStatic(this);
     }
 
-    private string ToXmlStatic()
+    private static string ToXmlStatic(Rectangle rectangle)
     {
         var builder = new StringBuilder();
 
         builder.Append("<rectangle");
-        builder.Append(" x=\"" + X + "\"");
-        builder.Append(" y=\"" + Y + "\"");
-        builder.Append(" width=\"" + Width + "\"");
-        builder.Append(" height=\"" + Height + "\"");
+        builder.Append(" x=\"" + rectangle.X + "\"");
+        builder.Append(" y=\"" + rectangle.Y + "\"");
+        builder.Append(" width=\"" + rectangle.Width + "\"");
+        builder.Append(" height=\"" + rectangle.Height + "\"");
         builder.Append(" />\n");
 
         return builder.ToString();
