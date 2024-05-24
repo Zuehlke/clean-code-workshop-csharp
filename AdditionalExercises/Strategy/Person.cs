@@ -25,10 +25,10 @@ public class Person
 
     public override string ToString()
     {
-        return NameString(givenName);
+        return NameString(givenName, familyName);
     }
 
-    private string NameString(string givenName)
+    private string NameString(string givenName, string familyName)
     {
         var surname = familyName;
         if (personNameStrategy.capitalizeSurname)
