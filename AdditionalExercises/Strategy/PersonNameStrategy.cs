@@ -2,7 +2,7 @@ namespace AdditionalExercises.Strategy;
 
 public abstract class PersonNameStrategy
 {
-    protected readonly bool capitalizeSurname;
+    private readonly bool capitalizeSurname;
 
     protected PersonNameStrategy(bool capitalizeSurname)
     {
